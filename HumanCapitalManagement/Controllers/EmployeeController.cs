@@ -9,10 +9,12 @@ using HumanCapitalManagement.Services.Interfaces;
 using HumanManagementCapital;
 using HumanCapitalManagement.DTOs;
 
-namespace HumanManagementCapital.Controllers
+namespace HumanCapitalManagement.Controllers
 {
+	[Authorize]
 	[ApiController]
 	[Route("api/[controller]")]
+	
 	public class EmployeeController : ControllerBase
 	{
 		private readonly IEmployeeService _employeeService;
@@ -23,7 +25,7 @@ namespace HumanManagementCapital.Controllers
 		[HttpGet("me")]
 		public async Task<IActionResult> PersonalData()
 		{
-			string currentUserId = "84c9f667-1b92-4e71-bca0-ffbe2d448d77";
+			string currentUserId = GetUserId();
 
 			if (string.IsNullOrEmpty(currentUserId))
 			{
@@ -39,6 +41,6 @@ namespace HumanManagementCapital.Controllers
 
 			return Ok(personalData);
 		}
-		private string GetUserId() => User?.FindFirstValue(ClaimTypes.NameIdentifier);
+		private string GetUserId() => User.FindFirstValue(ClaimTypes.NameIdentifier);
 	}
 }

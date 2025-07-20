@@ -1,11 +1,15 @@
+using HumanCapitalManagement;
 using HumanCapitalManagement.Components;
 using HumanCapitalManagement.Components.Account;
 using HumanCapitalManagement.Data;
 using HumanCapitalManagement.Services.Interfaces;
 using HumanManagementCapital.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -38,12 +42,23 @@ builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.Requ
 	.AddSignInManager()
 	.AddDefaultTokenProviders();
 builder.Services.AddControllers();
+builder.Services.AddHttpContextAccessor();
+
+// Register the custom handler
+builder.Services.AddTransient<CookieHandler>();
+
+// Configure a named HttpClient (or default) to use the handler
+builder.Services.AddHttpClient("ApiClient", client =>
+{
+	client.BaseAddress = new Uri("https://localhost:7109/");
+})
+.AddHttpMessageHandler<CookieHandler>();
+
 
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 
-builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:7109/") });
-builder.Services.AddHttpClient();
+
 
 
 var app = builder.Build();
@@ -64,8 +79,13 @@ app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 app.UseAntiforgery();
+
+app.UseRouting();
+
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseAntiforgery();
 
 app.MapRazorComponents<App>()
 	.AddInteractiveServerRenderMode();

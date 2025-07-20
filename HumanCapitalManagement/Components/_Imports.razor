@@ -9,3 +9,10 @@
 @using Microsoft.JSInterop
 @using HumanCapitalManagement
 @using HumanCapitalManagement.Components
+@using HumanCapitalManagement.DTOs
+@using HumanManagementCapital.Services
+@using Microsoft.AspNetCore.Authorization
+@inject AuthenticationStateProvider AuthStateProvider
+@inject IHttpClientFactory ClientFactory
+@using HumanCapitalManagement.Services.Interfaces
+@using System.Security.Claims

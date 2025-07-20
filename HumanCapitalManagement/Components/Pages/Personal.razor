@@ -1,6 +1,5 @@
 ﻿@page "/personal"
-@using HumanCapitalManagement.DTOs
-@inject HttpClient Http
+@attribute [Authorize]
 @if (employeeData == null)
 {
 	<div class="alert alert-warning text-center mt-5">
@@ -38,7 +37,7 @@ else
 									</dd>
 
 									<dt class="col-sm-4">Salary</dt>
-									<dd class="col-sm-8">@employeeData.Salary.ToString("C")</dd>
+									<dd class="col-sm-8">@employeeData.Salary.ToString("f2") lv.</dd>
 
 									<dt class="col-sm-4">Last Updated</dt>
 									<dd class="col-sm-8">@DateTime.Now.ToString("MMMM dd, yyyy",
@@ -55,8 +54,10 @@ else
 @code {
 	private PersonalEmployeeDTO? employeeData;
 
+
 	protected override async Task OnInitializedAsync()
 	{
-		employeeData = await Http.GetFromJsonAsync<PersonalEmployeeDTO>("api/employee/me");
+		var client = ClientFactory.CreateClient("ApiClient");
+		employeeData = await client.GetFromJsonAsync<PersonalEmployeeDTO>("api/employee/me");
 	}
 }
