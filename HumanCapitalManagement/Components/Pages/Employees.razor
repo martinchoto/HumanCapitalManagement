@@ -1,0 +1,62 @@
+﻿@page "/employees"
+@attribute [Authorize(Roles = "Manager")]
+
+<h3 class="text-center mt-4">Employees in Your Department</h3>
+
+@if (employees == null)
+{
+	<div class="text-center mt-5">
+		<span class="spinner-border text-primary" role="status"></span>
+		<p>Loading employees...</p>
+	</div>
+}
+else if (!employees.Any())
+{
+	<div class="alert alert-info text-center mt-4">
+		No employees found in your department.
+	</div>
+}
+else
+{
+	<div class="container mt-4">
+		<table class="table table-hover table-bordered shadow">
+			<thead class="table-dark">
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Department</th>
+					<th>Job Title</th>
+					<th>Salary</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var emp in employees)
+				{
+					<tr>
+						<td>@emp.FullName</td>
+						<td>@emp.Email</td>
+						<td>@emp.Department.Name</td>
+						<td>@emp.JobTitle</td>
+						<td>@emp.Salary.ToString("F2") lv.</td>
+						<td>
+							<a class="btn btn-sm btn-warning me-2" href="edit/@emp.Id">
+								<i class="fas fa-edit"></i> Edit
+							</a>
+						</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+}
+
+@code {
+	private List<PersonalEmployeeDTO>? employees;
+
+	protected override async Task OnInitializedAsync()
+	{
+		var client = ClientFactory.CreateClient("ApiClient");
+		employees = await client.GetFromJsonAsync<List<PersonalEmployeeDTO>>("api/department/employees");
+	}
+}

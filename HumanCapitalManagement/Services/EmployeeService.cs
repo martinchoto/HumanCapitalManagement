@@ -1,4 +1,6 @@
-﻿using HumanCapitalManagement.Data;
+﻿using HumanCapitalManagement.Components.Pages;
+using HumanCapitalManagement.Data;
+using HumanCapitalManagement.Data.Models;
 using HumanCapitalManagement.DTOs;
 using HumanCapitalManagement.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -13,6 +15,69 @@ namespace HumanManagementCapital.Services
 		{
 			_dbContext = dbContext;
 		}
+
+		public async Task<List<DepartmentDTO>> GetDepartments()
+		{
+			return await _dbContext.Departments.Select(x => new DepartmentDTO
+			{
+				Id = x.Id,
+				Name = x.Name,
+			})
+				.OrderBy(x => x.Name)
+			.ToListAsync();
+		}
+		public async Task UpdateEmployeeAsync(Employee employee,
+			EditEmployeeDTO editEmployeeDTO)
+		{
+			string[] fullName = editEmployeeDTO.FullName.Split(" ");
+			employee.FirstName = fullName[0];
+			employee.LastName = fullName[1];
+			employee.CompanyEmail = editEmployeeDTO.Email;
+			employee.DepartmentId = editEmployeeDTO.DepartmentId;
+			employee.JobTitle = editEmployeeDTO.JobTitle;
+
+			await _dbContext.SaveChangesAsync();
+		}
+		public async Task<PersonalEmployeeDTO> CreateEmployeeDTO(Employee employee)
+		{
+			return new PersonalEmployeeDTO
+			{
+				Id = employee.Id,
+				Department = new DepartmentDTO
+				{
+					Id = employee.DepartmentId,
+					Name = employee.Department.Name
+				},
+				FullName = employee.FirstName + " " + employee.LastName,
+				Salary = employee.Salary,
+				Email = employee.CompanyEmail,
+				JobTitle = employee.JobTitle
+			};
+		}
+		public async Task<List<PersonalEmployeeDTO>> GetEmployeesByDepartmentAsync(string managerId)
+		{
+			var manager = await _dbContext.Employees.Where(x => x.UserId == managerId).FirstOrDefaultAsync();
+			
+			if (manager == null)
+				return new List<PersonalEmployeeDTO>();
+
+
+			var employees = await _dbContext.Employees
+				.Where(x => x.DepartmentId == manager.DepartmentId)
+				.Select(e => new PersonalEmployeeDTO
+				{
+					Id = e.Id,
+					Email = e.CompanyEmail,
+					FullName = e.FirstName + " " + e.LastName,
+					Department = new DepartmentDTO { Name = e.Department.Name, Id = e.DepartmentId},
+					JobTitle = e.JobTitle,
+					Salary = e.Salary,
+				})
+				.ToListAsync();
+
+			return employees;
+		}
+
 		public async Task<PersonalEmployeeDTO> GetPersonalDataAsync(string employeeId)
 		{
 
@@ -24,11 +89,17 @@ namespace HumanManagementCapital.Services
 				FullName = e.FirstName + " " + e.LastName,
 				Email = e.CompanyEmail,
 				Salary = e.Salary,
-				Department = e.Department.Name,
-				JobTitle = e.JobTitle
+				JobTitle = e.JobTitle,
+				Department = new DepartmentDTO { Id = e.Id, Name = e.Department.Name },
 			})
 			.FirstOrDefaultAsync();
 		}
 
+		public async Task<Employee> GetEmployeeById(int id)
+		{
+			return await _dbContext.Employees
+				.Include(x => x.User)
+				.Include(x => x.Department).FirstOrDefaultAsync(x => x.Id == id);
+		}
 	}
 }

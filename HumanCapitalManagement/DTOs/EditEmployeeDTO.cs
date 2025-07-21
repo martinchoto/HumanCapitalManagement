@@ -2,7 +2,7 @@
 
 namespace HumanCapitalManagement.DTOs
 {
-	public class PersonalEmployeeDTO
+	public class EditEmployeeDTO
 	{
 		[JsonProperty("id")]
 		public int Id { get; set; }
@@ -10,11 +10,9 @@ namespace HumanCapitalManagement.DTOs
 		public string FullName { get; set; }
 		[JsonProperty("email")]
 		public string Email { get; set; }
-		[JsonProperty("department")]
-		public DepartmentDTO Department { get; set; }
+		[JsonProperty("department_id")]
+		public int DepartmentId { get; set; }
 		[JsonProperty("jobTitle")]
 		public string JobTitle { get; set; }
-		[JsonProperty("salary")]
-		public decimal Salary { get; set; }
 	}
 }

@@ -38,16 +38,21 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
+	.AddRoles<IdentityRole>()
 	.AddEntityFrameworkStores<ApplicationDbContext>()
 	.AddSignInManager()
 	.AddDefaultTokenProviders();
+
+builder.Services.AddScoped<IUserClaimsPrincipalFactory<ApplicationUser>,
+	UserClaimsPrincipalFactory<ApplicationUser, IdentityRole>>();
+
+
 builder.Services.AddControllers();
 builder.Services.AddHttpContextAccessor();
 
-// Register the custom handler
+
 builder.Services.AddTransient<CookieHandler>();
 
-// Configure a named HttpClient (or default) to use the handler
 builder.Services.AddHttpClient("ApiClient", client =>
 {
 	client.BaseAddress = new Uri("https://localhost:7109/");

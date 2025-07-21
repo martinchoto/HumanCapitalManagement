@@ -1,0 +1,93 @@
+﻿@page "/edit/{EditId}"
+
+<h3 class="mt-4 text-center">Edit Your Profile</h3>
+
+@if (editModel == null)
+{
+	<p class="text-center">Loading...</p>
+}
+else
+{
+	<StatusMessage Message="@message" />
+	<EditForm Model="editModel" OnValidSubmit="@SubmitForm" FormName="EditProfileForm">
+		<DataAnnotationsValidator />
+		<ValidationSummary />
+		<div class="row justify-content-center text-center">
+			<div class="col-md-6">
+
+				<div class="mb-3">
+					<label>Full Name</label>
+					<InputText class="form-control" @bind-Value="editModel.FullName" />
+				</div>
+
+				<div class="mb-3">
+					<label>Email</label>
+					<InputText class="form-control" @bind-Value="editModel.Email" />
+				</div>
+
+				<InputSelect class="form-control" @bind-Value="editModel.DepartmentId">
+					@foreach (var dep in departmentDTOs)
+					{
+						<option value="@dep.Id">@dep.Name</option>
+					}
+				</InputSelect>
+
+				<div class="mb-3">
+					<label>Job Title</label>
+					<InputText class="form-control" @bind-Value="editModel.JobTitle" />
+				</div>
+
+				<button type="submit" class="btn btn-primary w-100">Save Changes</button>
+
+				@if (!string.IsNullOrEmpty(message))
+				{
+					<div class="alert alert-info mt-3">@message</div>
+				}
+			</div>
+		</div>
+
+	</EditForm>
+}
+@code {
+
+	[Parameter]
+	public string EditId { get; set; }
+
+	private EditEmployeeDTO editModel;
+	private List<DepartmentDTO> departmentDTOs;
+	public string? message;
+	private HttpClient client => ClientFactory.CreateClient("ApiClient");
+	protected override async Task OnInitializedAsync()
+	{
+		try
+		{
+			departmentDTOs = await client.GetFromJsonAsync<List<DepartmentDTO>>("api/department/all");
+			if (departmentDTOs == null)
+			{
+				Console.WriteLine("No departments returned or failed to deserialize.");
+				departmentDTOs = new List<DepartmentDTO>();
+			}
+
+			editModel = await client.GetFromJsonAsync<EditEmployeeDTO>($"api/department/edit/{EditId}");
+		}
+		catch (Exception ex)
+		{
+			if (editModel == null)
+			{
+				NavigationManager.NavigateTo("/Account/AccessDenied");
+				message = "Failed to load employee data.";
+			}
+			message = "An error occurred while loading the page.";
+		}
+	}
+
+	private async Task SubmitForm()
+	{
+		var response = await client.PutAsJsonAsync($"api/department/edit/{EditId}", editModel);
+		message = response.IsSuccessStatusCode ? "Updated successfully." : "Update failed.";
+
+		await Task.Delay(2000);
+
+		NavigationManager.NavigateTo("/employees");
+	}
+}
