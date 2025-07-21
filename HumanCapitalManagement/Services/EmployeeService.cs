@@ -36,20 +36,16 @@ namespace HumanManagementCapital.Services
 			employee.DepartmentId = editEmployeeDTO.DepartmentId;
 			employee.JobTitle = editEmployeeDTO.JobTitle;
 
+
 			await _dbContext.SaveChangesAsync();
 		}
-		public async Task<PersonalEmployeeDTO> CreateEmployeeDTO(Employee employee)
+		public async Task<EditEmployeeDTO> CreateEmployeeDTO(Employee employee)
 		{
-			return new PersonalEmployeeDTO
+			return new EditEmployeeDTO
 			{
 				Id = employee.Id,
-				Department = new DepartmentDTO
-				{
-					Id = employee.DepartmentId,
-					Name = employee.Department.Name
-				},
+				DepartmentId = employee.DepartmentId,
 				FullName = employee.FirstName + " " + employee.LastName,
-				Salary = employee.Salary,
 				Email = employee.CompanyEmail,
 				JobTitle = employee.JobTitle
 			};

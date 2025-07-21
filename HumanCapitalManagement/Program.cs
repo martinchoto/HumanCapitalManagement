@@ -46,7 +46,7 @@ builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.Requ
 builder.Services.AddScoped<IUserClaimsPrincipalFactory<ApplicationUser>,
 	UserClaimsPrincipalFactory<ApplicationUser, IdentityRole>>();
 
-
+builder.Services.AddServerSideBlazor();
 builder.Services.AddControllers();
 builder.Services.AddHttpContextAccessor();
 

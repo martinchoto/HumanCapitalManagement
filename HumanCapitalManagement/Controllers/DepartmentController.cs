@@ -1,5 +1,6 @@
 ﻿using HumanCapitalManagement.Components.Account.Pages;
 using HumanCapitalManagement.Components.Pages;
+using HumanCapitalManagement.Data.Models;
 using HumanCapitalManagement.DTOs;
 using HumanCapitalManagement.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
@@ -29,13 +30,13 @@ namespace HumanCapitalManagement.Controllers
 		{
 			string managerId = GetUserId();
 
-			var employees = await _employeeService.GetEmployeesByDepartmentAsync(managerId);
+			List<PersonalEmployeeDTO> employees = await _employeeService.GetEmployeesByDepartmentAsync(managerId);
 			return Ok(employees);
 		}
 		[HttpGet("all")]
 		public async Task<IActionResult> AllDepartments()
 		{
-			var departments = await _employeeService.GetDepartments();
+			List<DepartmentDTO> departments = await _employeeService.GetDepartments();
 			if (!departments.Any())
 				return Ok(new List<DepartmentDTO>());
 			return Ok(departments);
@@ -43,35 +44,36 @@ namespace HumanCapitalManagement.Controllers
 		[HttpGet("edit/{id}")]
 		public async Task<IActionResult> EditMyEmployeeData(int id)
 		{
-			var employee = await _employeeService.GetEmployeeById(id);
+			Employee employee = await _employeeService.GetEmployeeById(id);
 			if (employee == null)
 			{
 				return BadRequest();
 			}
-			var employeeDto = await _employeeService.CreateEmployeeDTO(employee);
-			var managedByManager = await _employeeService.GetEmployeesByDepartmentAsync(GetUserId());
+			EditEmployeeDTO employeeDto = await _employeeService.CreateEmployeeDTO(employee);
+
+
+			List<PersonalEmployeeDTO> managedByManager =
+				await _employeeService.GetEmployeesByDepartmentAsync(GetUserId());
 
 			if (managedByManager == null || employeeDto == null)
 				return Forbid();
 
-			if (!managedByManager.Any(x => x.Department.Id == employeeDto.Department.Id))
+			if (!managedByManager.Any(x => x.Department.Id == employeeDto.DepartmentId))
 				return Forbid();
 
 			return Ok(employeeDto);
 		}
 		[HttpPut("edit/{id}")]
-		public async Task<IActionResult> EditMyEmployeeData([FromBody] EditEmployeeDTO updatedDto, int id)
+		public async Task<IActionResult> SaveEdit(int id, [FromBody]EditEmployeeDTO editModel)
 		{
-			var employee = await _employeeService.GetEmployeeById(id);
+			Employee employee = await _employeeService.GetEmployeeById(id);
 			if (employee == null)
 			{
 				return BadRequest();
 			}
 			if (!ModelState.IsValid)
 				return BadRequest("Invalid data.");
-
-
-			await _employeeService.UpdateEmployeeAsync(employee, updatedDto);
+			await _employeeService.UpdateEmployeeAsync(employee, editModel);
 
 			return Ok("Employee updated.");
 		}

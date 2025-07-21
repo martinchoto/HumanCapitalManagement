@@ -8,7 +8,7 @@ namespace HumanCapitalManagement.Services.Interfaces
 		Task<List<PersonalEmployeeDTO>> GetEmployeesByDepartmentAsync(string? managerId);
 		Task<PersonalEmployeeDTO> GetPersonalDataAsync(string id);
 		Task<List<DepartmentDTO>> GetDepartments();
-		Task<PersonalEmployeeDTO> CreateEmployeeDTO(Employee employee);
+		Task<EditEmployeeDTO> CreateEmployeeDTO(Employee employee);
 		Task UpdateEmployeeAsync(Employee personalEmployeeDTO, EditEmployeeDTO editEmployeeDTO);
 		Task<Employee> GetEmployeeById(int id);
 	}
