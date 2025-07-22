@@ -1,5 +1,5 @@
-﻿@page "/manager/edit/{EditId:int}"
-@attribute [Authorize(Roles = "Manager")]
+﻿@page "/hr/edit/{EditId:int}"
+@attribute [Authorize(Roles = "HR Admin")]
 <h3 class="mt-4 text-center">Edit Profile</h3>
 
 @if (updateModel == null)
@@ -25,7 +25,7 @@ else
 					<InputText @bind-Value="updateModel.Email" class="form-control" />
 				</div>
 
-				<InputSelect @bind-Value="updateModel.DepartmentId" @Value="2" class="form-control">
+				<InputSelect @bind-Value="updateModel.DepartmentId" class="form-control">
 					@foreach (var dep in departmentDTOs)
 					{
 						<option value="@dep.Id">@dep.Name</option>
@@ -37,7 +37,17 @@ else
 					<label>Job Title</label>
 					<InputText @bind-Value="updateModel.JobTitle" class="form-control" />
 				</div>
-				
+				<div class="mb-3">
+					<label>Salary</label>
+					<InputText @bind-Value="updateModel.Salary" class="form-control" />
+				</div>
+				<InputSelect @bind-Value="updateModel.Role" class="form-control">
+					@foreach (var roles in roleDTOs)
+					{
+						<option value="@roles.Name">@roles.Name</option>
+					}
+				</InputSelect>
+
 				<button type="submit" class="btn btn-primary w-100">Save Changes</button>
 
 			</div>
@@ -48,36 +58,27 @@ else
 @code {
 	[Parameter]
 	public int EditId { get; set; }
-
+	private string? message;
 	private List<DepartmentDTO> departmentDTOs = new();
-	public string? message;
+	private List<RoleDTO> roleDTOs = new();	
+	private EditHRDTO updateModel = new();
 	private HttpClient client => ClientFactory.CreateClient("ApiClient");
-	[SupplyParameterFromForm]
-	public EditEmployeeDTO updateModel { get; set; } = new();
-
 	protected override async Task OnInitializedAsync()
 	{
-
 		try
 		{
 			departmentDTOs = await client.GetFromJsonAsync<List<DepartmentDTO>>("api/department/all");
-
-			if (departmentDTOs == null)
-			{
-				Console.WriteLine("No departments returned or failed to deserialize.");
-				departmentDTOs = new List<DepartmentDTO>();
-			}
+			roleDTOs = await client.GetFromJsonAsync<List<RoleDTO>>("api/hr/roles/all");
 		}
 		catch (Exception ex)
 		{
-			message = "An error occurred while loading the page.";
+			message = $"Error loading data: {ex.Message}";
 		}
 	}
-
-	private async Task SubmitForm()
+	private async Task SubmitForm(EditContext args)
 	{
-		var response = 
-			await client.PutAsJsonAsync<EditEmployeeDTO>($"api/department/edit/{EditId}", updateModel);
+		var response =
+			await client.PutAsJsonAsync<EditEmployeeDTO>($"api/hr/edit/{EditId}", updateModel);
 		if (response.IsSuccessStatusCode)
 		{
 			message = "Updated successfully.";

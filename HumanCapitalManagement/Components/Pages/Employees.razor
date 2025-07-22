@@ -1,5 +1,5 @@
 ﻿@page "/employees"
-@attribute [Authorize(Roles = "Manager")]
+@attribute [Authorize(Roles = "Manager,HR Admin")]
 
 <h3 class="text-center mt-4">Employees in Your Department</h3>
 
@@ -18,7 +18,7 @@ else if (!employees.Any())
 }
 else
 {
-	<div class="container mt-4">
+	<div class="container mt-4 text-center">
 		<table class="table table-hover table-bordered shadow">
 			<thead class="table-dark">
 				<tr>

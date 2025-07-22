@@ -2,6 +2,7 @@ using HumanCapitalManagement;
 using HumanCapitalManagement.Components;
 using HumanCapitalManagement.Components.Account;
 using HumanCapitalManagement.Data;
+using HumanCapitalManagement.Services;
 using HumanCapitalManagement.Services.Interfaces;
 using HumanManagementCapital.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -16,6 +17,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorComponents()
 	.AddInteractiveServerComponents();
+
 
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
@@ -61,6 +63,8 @@ builder.Services.AddHttpClient("ApiClient", client =>
 
 
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
+
+builder.Services.AddScoped<IHRService, HRService>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 
 

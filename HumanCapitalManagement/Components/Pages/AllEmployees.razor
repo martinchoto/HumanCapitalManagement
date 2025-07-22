@@ -1,0 +1,65 @@
+﻿@page "/hr/all"
+<h3 class="text-center">All Employees</h3>
+
+@if (employees == null)
+{
+	<p class="text-center">Loading...</p>
+}
+else if (employees.Count == 0)
+{
+	<p class="text-center text-muted">No employees found.</p>
+}
+else
+{
+	<table class="table table-striped table-bordered mt-3 text-center">
+		<thead class="table-dark text-center">
+			<tr>
+				<th>Full Name</th>
+				<th>Email</th>
+				<th>Department</th>
+				<th>Job Title</th>
+				<th>Roles</th>
+				<th>Salary</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody class="text-center">
+			@foreach (var emp in employees)
+			{
+				<tr>
+					<td>@emp.FullName</td>
+					<td>@emp.Email</td>
+					<td>@emp.Department.Name</td>
+					<td>@emp.JobTitle</td>
+					<td>
+						@if (emp.Roles != null && emp.Roles.Any())
+						{
+							@foreach (var role in emp.Roles)
+							{
+								<span class="badge bg-secondary">@role.Name</span>
+							}
+						}
+						else
+						{
+							<em>No roles</em>
+						}
+					</td>
+					<td>@emp.Salary.ToString("f2") lv.</td>
+					<td>
+						<a class="btn btn-warning btn-sm" href="/hr/edit/@emp.Id">Edit</a>
+						<a class="btn btn-danger btn-sm" href="/delete/@emp.Id">Delete</a>
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+}
+
+@code {
+	private List<EmployeeDataDTO>? employees;
+	protected override async Task OnInitializedAsync()
+	{
+		var client = ClientFactory.CreateClient("ApiClient");
+		employees = await client.GetFromJsonAsync<List<EmployeeDataDTO>>("api/hr/all");
+	}
+}

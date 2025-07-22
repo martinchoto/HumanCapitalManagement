@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace HumanCapitalManagement.Controllers
 {
-	[Authorize(Roles = "Manager")]
+	[Authorize(Roles = "Manager,HR Admin")]
 	[Route("api/[controller]")]
 	[ApiController]
 	public class DepartmentController : ControllerBase
@@ -52,13 +52,8 @@ namespace HumanCapitalManagement.Controllers
 			EditEmployeeDTO employeeDto = await _employeeService.CreateEmployeeDTO(employee);
 
 
-			List<PersonalEmployeeDTO> managedByManager =
-				await _employeeService.GetEmployeesByDepartmentAsync(GetUserId());
-
-			if (managedByManager == null || employeeDto == null)
-				return Forbid();
-
-			if (!managedByManager.Any(x => x.Department.Id == employeeDto.DepartmentId))
+			if (employeeDto == null ||
+				(!User.IsInRole("HR Admin") && !User.IsInRole("Manager")))
 				return Forbid();
 
 			return Ok(employeeDto);
