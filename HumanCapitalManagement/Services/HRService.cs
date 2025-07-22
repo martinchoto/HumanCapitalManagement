@@ -1,7 +1,9 @@
-﻿using HumanCapitalManagement.Data;
+﻿using HumanCapitalManagement.Components.Pages;
+using HumanCapitalManagement.Data;
 using HumanCapitalManagement.Data.Models;
 using HumanCapitalManagement.DTOs;
 using HumanCapitalManagement.Services.Interfaces;
+using Humanizer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -81,6 +83,75 @@ namespace HumanCapitalManagement.Services
 			}).ToListAsync();
 
 			return roles;
+		}
+
+		public async Task AddEmployee(EditHRDTO dto)
+		{
+			var nameParts = dto.FullName.Split(' ', 2);
+			var firstName = nameParts[0];
+			var lastName = nameParts.Length > 1 ? nameParts[1] : "";
+
+			var user = new ApplicationUser
+			{
+				UserName = firstName+lastName,
+				Email = dto.Email,
+			};
+
+			var createResult = await _userManager.CreateAsync(user, "admin");
+			if (!createResult.Succeeded)
+			{
+				throw new Exception("Can't add this user!");
+			}
+
+			if (!string.IsNullOrWhiteSpace(dto.Role))
+			{
+				var roleResult = await _userManager.AddToRoleAsync(user, dto.Role);
+				if (!roleResult.Succeeded)
+				{
+					throw new Exception("Can't add this role.");
+				}
+			}
+
+			var employee = new Employee
+			{
+				UserId = user.Id,
+				FirstName = firstName,
+				LastName = lastName,
+				CompanyEmail = dto.Email,
+				DepartmentId = dto.DepartmentId,
+				JobTitle = dto.JobTitle
+			};
+
+			if (decimal.TryParse(dto.Salary, out var salary))
+			{
+				employee.Salary = salary;
+			}
+			else
+			{
+				throw new Exception("Invalid salary format.");
+			}
+
+			_dbContext.Employees.Add(employee);
+			await _dbContext.SaveChangesAsync();
+		}
+
+		public async Task DeleteEmployee(Employee employee)
+		{
+			if (employee == null)
+				throw new Exception($"Employee with ID {employee.Id} not found.");
+
+			var user = await _userManager.FindByIdAsync(employee.UserId);
+			if (user == null)
+				throw new Exception($"Associated user with ID {employee.UserId} not found.");
+
+			_dbContext.Employees.Remove(employee);
+
+
+			var identityResult = await _userManager.DeleteAsync(user);
+			if (!identityResult.Succeeded)
+				throw new Exception($"Failed to delete user with ID {user.Id}: {string.Join(", ", identityResult.Errors.Select(e => e.Description))}");
+
+			await _dbContext.SaveChangesAsync();
 		}
 	}
 }

@@ -103,19 +103,43 @@ namespace HumanManagementCapital.Services
 
 		public async Task UpdateEmployeeAsync(Employee employee, EditHRDTO editEmployeeDTO)
 		{
-			string[] fullName = editEmployeeDTO.FullName.Split(" ");
+			string[] fullName = editEmployeeDTO.FullName.Split(" ", 2);
 			employee.FirstName = fullName[0];
-			employee.LastName = fullName[1];
+			employee.LastName = fullName.Length > 1 ? fullName[1] : "";
 			employee.CompanyEmail = editEmployeeDTO.Email;
 			employee.DepartmentId = editEmployeeDTO.DepartmentId;
 			employee.JobTitle = editEmployeeDTO.JobTitle;
-			employee.Salary = decimal.Parse(editEmployeeDTO.Salary);
+
+			if (decimal.TryParse(editEmployeeDTO.Salary, out var salary))
+			{
+				employee.Salary = salary;
+			}
+			else
+			{
+				throw new Exception("Invalid salary format.");
+			}
 
 			var user = await _userManager.FindByIdAsync(employee.UserId);
 
-			await _userManager.AddToRoleAsync(user, editEmployeeDTO.Role);
+			var currentRoles = await _userManager.GetRolesAsync(user);
 
+			if (currentRoles.Any())
+			{
+				var removeResult = await _userManager.RemoveFromRolesAsync(user, currentRoles);
+				if (!removeResult.Succeeded)
+				{
+					return;
+				}
+			}
 
+			if (!string.IsNullOrWhiteSpace(editEmployeeDTO.Role))
+			{
+				var addResult = await _userManager.AddToRoleAsync(user, editEmployeeDTO.Role);
+				if (!addResult.Succeeded)
+				{
+					return;
+				}
+			}
 			await _dbContext.SaveChangesAsync();
 		}
 	}

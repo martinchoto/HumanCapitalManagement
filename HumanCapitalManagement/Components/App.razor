@@ -14,7 +14,11 @@
 
 <body>
     <Routes />
-    <script src="_framework/blazor.web.js"></script>
+    <script>
+        window.showConfirm = function (message) {
+            return confirm(message);
+        };
+    </script>
 </body>
-
+<script src="_framework/blazor.web.js"></script>
 </html>

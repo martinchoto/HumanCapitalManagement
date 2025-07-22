@@ -1,5 +1,7 @@
 ﻿@page "/hr/all"
+@rendermode InteractiveServer
 <h3 class="text-center">All Employees</h3>
+<h4 class="text-center btn btn-danger">@message</h4>
 
 @if (employees == null)
 {
@@ -47,7 +49,7 @@ else
 					<td>@emp.Salary.ToString("f2") lv.</td>
 					<td>
 						<a class="btn btn-warning btn-sm" href="/hr/edit/@emp.Id">Edit</a>
-						<a class="btn btn-danger btn-sm" href="/delete/@emp.Id">Delete</a>
+						<button class="btn btn-danger btn-sm"  @onclick=" async () => await DeleteEmployee(emp.Id)">Delete</button>
 					</td>
 				</tr>
 			}
@@ -56,10 +58,44 @@ else
 }
 
 @code {
-	private List<EmployeeDataDTO>? employees;
-	protected override async Task OnInitializedAsync()
-	{
-		var client = ClientFactory.CreateClient("ApiClient");
-		employees = await client.GetFromJsonAsync<List<EmployeeDataDTO>>("api/hr/all");
+	private HttpClient client => ClientFactory.CreateClient("ApiClient");
+    private string? message;
+    private List<EmployeeDataDTO>? employees;
+    protected override async Task OnInitializedAsync()
+    {
+        employees = await client.GetFromJsonAsync<List<EmployeeDataDTO>>("api/hr/all");
+    }
+    private async Task DeleteEmployee(int id)
+    {
+        IJSRuntime jS = JS;
+        bool confirmed = await jS.InvokeAsync<bool>("showConfirm", $"Are you sure you want to delete employee {id}?");
+
+		if (confirmed)
+		{
+			try
+			{
+				var response = await client.DeleteAsync($"api/hr/delete/{id}");
+
+				if (response.IsSuccessStatusCode)
+				{
+					var deleted = employees?.FirstOrDefault(e => e.Id == id);
+					if (deleted != null) employees.Remove(deleted);
+					message = $"✅ Employee {id} deleted.";
+				}
+				else
+				{
+					var error = await response.Content.ReadAsStringAsync();
+					message = $"❌ Failed to delete: {error}";
+				}
+			}
+			catch (Exception ex)
+			{
+				message = $"❌ Error: {ex.Message}";
+			}
+		}
+		else
+		{
+			message = "Deletion canceled.";
+		}
 	}
 }

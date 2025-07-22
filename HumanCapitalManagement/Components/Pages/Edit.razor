@@ -8,7 +8,11 @@
 }
 else
 {
-	<StatusMessage Message="@message" />
+
+	<div class="text-center">
+		<StatusMessage Message="@message" />
+	</div>
+
 	<EditForm Model="updateModel" OnValidSubmit="SubmitForm" FormName="EditProfileForm">
 		<DataAnnotationsValidator />
 		<ValidationSummary />
@@ -37,7 +41,7 @@ else
 					<label>Job Title</label>
 					<InputText @bind-Value="updateModel.JobTitle" class="form-control" />
 				</div>
-				
+
 				<button type="submit" class="btn btn-primary w-100">Save Changes</button>
 
 			</div>
@@ -76,7 +80,7 @@ else
 
 	private async Task SubmitForm()
 	{
-		var response = 
+		var response =
 			await client.PutAsJsonAsync<EditEmployeeDTO>($"api/department/edit/{EditId}", updateModel);
 		if (response.IsSuccessStatusCode)
 		{

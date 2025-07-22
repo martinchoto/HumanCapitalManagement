@@ -8,7 +8,9 @@
 }
 else
 {
-	<StatusMessage Message="@message" />
+	<div class="text-center">
+		<StatusMessage Message="@message" />
+	</div>
 	<EditForm Model="updateModel" OnValidSubmit="SubmitForm" FormName="EditProfileForm">
 		<DataAnnotationsValidator />
 		<ValidationSummary />
@@ -61,7 +63,8 @@ else
 	private string? message;
 	private List<DepartmentDTO> departmentDTOs = new();
 	private List<RoleDTO> roleDTOs = new();	
-	private EditHRDTO updateModel = new();
+	[SupplyParameterFromForm]
+	private EditHRDTO updateModel { get; set; } = new();
 	private HttpClient client => ClientFactory.CreateClient("ApiClient");
 	protected override async Task OnInitializedAsync()
 	{
@@ -78,7 +81,7 @@ else
 	private async Task SubmitForm(EditContext args)
 	{
 		var response =
-			await client.PutAsJsonAsync<EditEmployeeDTO>($"api/hr/edit/{EditId}", updateModel);
+			await client.PutAsJsonAsync<EditHRDTO>($"api/hr/edit/{EditId}", updateModel);
 		if (response.IsSuccessStatusCode)
 		{
 			message = "Updated successfully.";
