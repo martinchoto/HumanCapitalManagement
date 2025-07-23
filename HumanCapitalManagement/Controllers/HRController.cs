@@ -68,5 +68,30 @@ namespace HumanCapitalManagement.Controllers
 			await _hrService.DeleteEmployee(employee);
 			return Ok(new { message = "Employee deleted successfully." });
 		}
+		[HttpGet("salaries/{employeeId}")]
+		public async Task<IActionResult> GetSalaryRecords(int employeeId)
+		{
+			List<SalaryRecordDTO> salaryRecords = await _hrService.GetSalaryRecordDTOs(employeeId);
+			if (salaryRecords == null || !salaryRecords.Any())
+			{
+				return Ok(new List<SalaryRecordDTO>());
+			}
+			return Ok(salaryRecords);
+		}
+		[HttpPost("salary/add/{employeeId}")]
+		public async Task<IActionResult> AddSalaryRecord(int employeeId, [FromBody] SalaryRecordDTO salaryRecordDto)
+		{
+			if (salaryRecordDto == null)
+			{
+				return BadRequest("Invalid salary record data.");
+			}
+			var employee = await _employeeService.GetEmployeeById(employeeId);
+			if (employee == null)
+			{
+				return NotFound($"No employee found with ID {employeeId}.");
+			}
+			await _hrService.AddSalaryRecord(employee, salaryRecordDto);
+			return Ok(new { message = "Salary record added successfully." });
+		}
 	}
 }

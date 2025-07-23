@@ -63,7 +63,7 @@ else
                 if (response.IsSuccessStatusCode)
                 {
                     message = $"Employee {id} deleted.";
-					StateHasChanged();
+					NavigationManager.NavigateTo("/departments/all", true);
                 }
                 else
                 {

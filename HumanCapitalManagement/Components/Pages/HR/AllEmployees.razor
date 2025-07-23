@@ -46,6 +46,7 @@ else
 					</td>
 					<td>@emp.Salary.ToString("f2") lv.</td>
 					<td>
+						<a class="btn btn-primary btn-sm" href="hr/employeesalary/@emp.Id">Salaries</a>
 						<a class="btn btn-warning btn-sm" href="/hr/edit/@emp.Id">Edit</a>
 						<button class="btn btn-danger btn-sm"  @onclick=" async () => await DeleteEmployee(emp.Id)">Delete</button>
 					</td>
@@ -76,17 +77,18 @@ else
 
 				if (response.IsSuccessStatusCode)
 				{
-					message = $"✅ Employee {id} deleted.";
+					message = $"Employee {id} deleted.";
+					NavigationManager.NavigateTo("/hr/all", true);
 				}
 				else
 				{
 					var error = await response.Content.ReadAsStringAsync();
-					message = $"❌ Failed to delete: {error}";
+					message = $"Failed to delete: {error}";
 				}
 			}
 			catch (Exception ex)
 			{
-				message = $"❌ Error: {ex.Message}";
+				message = $"Error: {ex.Message}";
 			}
 		}
 		else

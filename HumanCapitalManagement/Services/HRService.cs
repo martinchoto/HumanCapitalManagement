@@ -153,5 +153,42 @@ namespace HumanCapitalManagement.Services
 
 			await _dbContext.SaveChangesAsync();
 		}
+		public async Task<List<SalaryRecordDTO>> GetSalaryRecordDTOs(int employeeId)
+		{
+			return await _dbContext.SalaryRecords
+				.Where(sr => sr.EmployeeId == employeeId)
+				.Select(sr => new SalaryRecordDTO
+				{
+					Id = sr.Id,
+					Name = sr.Name,
+					EmployeeId = sr.EmployeeId,
+					Amount = sr.Amount,
+					DateIssued = sr.DateIssued,
+					Description = sr.Description,
+				})
+				.OrderByDescending(sr => sr.DateIssued)
+				.ToListAsync();
+		}
+
+		public async Task AddSalaryRecord(Employee employee, SalaryRecordDTO salaryRecordDto)
+		{
+			SalaryRecord salaryRecord = new SalaryRecord
+			{
+				EmployeeId = employee.Id,
+				DateIssued = DateTime.Now,
+				Description = salaryRecordDto.Description,
+				Name = salaryRecordDto.Name,
+			};
+			if (decimal.TryParse(salaryRecordDto.Amount.ToString(), out var amount))
+			{
+				salaryRecord.Amount = amount;
+			}
+			else
+			{
+				throw new Exception("Invalid salary amount format.");
+			}
+			await _dbContext.SalaryRecords.AddAsync(salaryRecord);
+			await _dbContext.SaveChangesAsync();
+		}
 	}
 }

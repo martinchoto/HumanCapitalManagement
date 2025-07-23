@@ -13,6 +13,7 @@ namespace HumanCapitalManagement.Data
 		}
 		public DbSet<Department> Departments { get; set; } = null!;
 		public DbSet<Employee> Employees { get; set; } = null!;
+		public DbSet<SalaryRecord> SalaryRecords { get; set; } = null!;
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			base.OnModelCreating(modelBuilder);

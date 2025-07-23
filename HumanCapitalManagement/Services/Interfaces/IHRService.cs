@@ -11,5 +11,7 @@ namespace HumanCapitalManagement.Services.Interfaces
 
 		Task AddEmployee(AddEmployeeDTO editHRDto);
 		Task DeleteEmployee(Employee employee);
+		Task<List<SalaryRecordDTO>> GetSalaryRecordDTOs(int employeeId);
+		Task AddSalaryRecord(Employee employee, SalaryRecordDTO salaryRecordDto);
 	}
 }

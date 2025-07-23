@@ -74,11 +74,11 @@
 			await client.PostAsJsonAsync<AddEmployeeDTO>($"api/hr/add", updateModel);
 		if (response.IsSuccessStatusCode)
 		{
-			message = "Updated successfully.";
+			message = "Added successfully.";
 		}
 		else
 		{
-			message = "Update failed.";
+			message = "Added failed.";
 		}
 	}
 }

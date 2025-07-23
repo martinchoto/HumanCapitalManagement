@@ -1,0 +1,49 @@
+﻿@page "/hr/salary/add/{EmployeeId:int}"
+@attribute [Authorize(Roles = "HR Admin")]
+<h3 class="text-center">Add Salaries</h3>
+<StatusMessage Message="@message" />
+<EditForm Model="newRecord" OnValidSubmit="CreateSalaryRecordAsync" FormName="AddSalary">
+	<DataAnnotationsValidator />
+	<ValidationSummary />
+
+	<div class="row mb-3">
+		<div class="col">
+			<InputText class="form-control" @bind-Value="newRecord.Name" placeholder="Name (e.g. Salary, Bonus)" />
+		</div>
+		<div class="col">
+			<InputText class="form-control" @bind-Value="newRecord.Description" placeholder="Description" />
+		</div>
+		<div class="col">
+			<InputNumber class="form-control" @bind-Value="newRecord.Amount" placeholder="Amount" />
+		</div>
+		<div class="col">
+			<button type="submit" class="btn btn-primary">Create</button>
+		</div>
+	</div>
+</EditForm>
+
+@code {
+	[Parameter]
+	public int EmployeeId { get; set; }
+	[SupplyParameterFromForm]
+	private SalaryRecordDTO newRecord { get; set; } = new();
+	private HttpClient client => ClientFactory.CreateClient("ApiClient");
+	private bool isFormVisible = false;
+	private string? message;
+
+	private async Task CreateSalaryRecordAsync()
+	{
+		var response =
+				await client.PostAsJsonAsync<SalaryRecordDTO>($"api/hr/salary/add/{EmployeeId}", newRecord);
+		if (response.IsSuccessStatusCode)
+		{
+			message = "Added successfully.";
+			NavigationManager.NavigateTo($"/hr/employeesalary/{EmployeeId}");
+		}
+		else
+		{
+			message = "Failed.";
+		}
+
+	}
+}
