@@ -1,8 +1,6 @@
 ﻿@page "/hr/all"
 @rendermode InteractiveServer
 <h3 class="text-center">All Employees</h3>
-<h4 class="text-center btn btn-danger">@message</h4>
-
 @if (employees == null)
 {
 	<p class="text-center">Loading...</p>
@@ -78,8 +76,6 @@ else
 
 				if (response.IsSuccessStatusCode)
 				{
-					var deleted = employees?.FirstOrDefault(e => e.Id == id);
-					if (deleted != null) employees.Remove(deleted);
 					message = $"✅ Employee {id} deleted.";
 				}
 				else

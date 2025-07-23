@@ -1,6 +1,6 @@
-﻿@page "/hr/add"
+﻿@page "/hr/edit/{EditId:int}"
 @attribute [Authorize(Roles = "HR Admin")]
-<h3 class="mt-4 text-center">Create Account</h3>
+<h3 class="mt-4 text-center">Edit Profile</h3>
 
 @if (updateModel == null)
 {
@@ -58,11 +58,13 @@ else
 	</EditForm>
 }
 @code {
+	[Parameter]
+	public int EditId { get; set; }
 	private string? message;
 	private List<DepartmentDTO> departmentDTOs = new();
-	private List<RoleDTO> roleDTOs = new();
+	private List<RoleDTO> roleDTOs = new();	
 	[SupplyParameterFromForm]
-	private EditHRDTO updateModel { get; set; } = new();
+	private AddEmployeeDTO updateModel { get; set; } = new();
 	private HttpClient client => ClientFactory.CreateClient("ApiClient");
 	protected override async Task OnInitializedAsync()
 	{
@@ -76,10 +78,10 @@ else
 			message = $"Error loading data: {ex.Message}";
 		}
 	}
-	private async Task SubmitForm()
+	private async Task SubmitForm(EditContext args)
 	{
 		var response =
-			await client.PostAsJsonAsync<EditHRDTO>($"api/hr/add", updateModel);
+			await client.PutAsJsonAsync<AddEmployeeDTO>($"api/hr/edit/{EditId}", updateModel);
 		if (response.IsSuccessStatusCode)
 		{
 			message = "Updated successfully.";

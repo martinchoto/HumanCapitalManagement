@@ -61,9 +61,9 @@ namespace HumanCapitalManagement.Services
 			return employees;
 
 		}
-		public async Task<EditHRDTO> CreateEmployeeDTO(Employee employee)
+		public async Task<AddEmployeeDTO> CreateEmployeeDTO(Employee employee)
 		{
-			return new EditHRDTO
+			return new AddEmployeeDTO
 			{
 				Id = employee.Id,
 				DepartmentId = employee.DepartmentId,
@@ -85,7 +85,7 @@ namespace HumanCapitalManagement.Services
 			return roles;
 		}
 
-		public async Task AddEmployee(EditHRDTO dto)
+		public async Task AddEmployee(AddEmployeeDTO dto)
 		{
 			var nameParts = dto.FullName.Split(' ', 2);
 			var firstName = nameParts[0];

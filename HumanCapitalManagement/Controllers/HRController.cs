@@ -30,7 +30,7 @@ namespace HumanCapitalManagement.Controllers
 			return await _hrService.AllWorkers();
 		}
 		[HttpPut("edit/{id}")]
-		public async Task<IActionResult> EditEmployee(int id, [FromBody] EditHRDTO editModel)
+		public async Task<IActionResult> EditEmployee(int id, [FromBody] AddEmployeeDTO editModel)
 		{
 			if (editModel == null)
 			{
@@ -48,7 +48,7 @@ namespace HumanCapitalManagement.Controllers
 
 		}
 		[HttpPost("add")]
-		public async Task<IActionResult> CreateEmployee([FromBody] EditHRDTO createModel)
+		public async Task<IActionResult> CreateEmployee([FromBody] AddEmployeeDTO createModel)
 		{
 			if (createModel == null)
 			{

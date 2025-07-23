@@ -1,0 +1,44 @@
+﻿@page "/departments/update/{EditId:int}"
+@attribute [Authorize(Roles = "HR Admin")]
+<h3 class="text-center">Edit Department</h3>
+<StatusMessage Message="@message" />
+<EditForm Model="departmentModel" OnValidSubmit="SubmitForm" FormName="CreateDepartmentForm">
+	<DataAnnotationsValidator />
+	<ValidationSummary />
+	<div class="row justify-content-center text-center">
+		<div class="col-md-6">
+
+			<div class="mb-3">
+				<label>Department Name</label>
+				<InputText @bind-Value="departmentModel.Name" class="form-control" />
+			</div>
+			<button type="submit" class="btn btn-primary w-100">Save Changes</button>
+		</div>
+
+	</div>
+</EditForm>
+
+@code {
+	[Parameter]
+	public int EditId { get; set; }
+	[SupplyParameterFromForm]
+	private DepartmentDTO? departmentModel { get; set; } = new DepartmentDTO();
+	private string? message;
+	private HttpClient client => ClientFactory.CreateClient("ApiClient");
+
+	private async Task SubmitForm()
+	{
+		var response =
+			await client.PutAsJsonAsync<DepartmentDTO>($"api/department/update/{EditId}", departmentModel);
+		if (response.IsSuccessStatusCode)
+		{
+			message = "Created successfully.";
+			NavigationManager.NavigateTo("/departments/all");
+		}
+		else
+		{
+			message = "Creation failed.";
+		}
+	}
+}
+

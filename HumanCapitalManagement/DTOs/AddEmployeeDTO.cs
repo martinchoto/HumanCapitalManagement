@@ -2,7 +2,7 @@
 
 namespace HumanCapitalManagement.DTOs
 {
-	public class EditHRDTO : EditEmployeeDTO
+	public class AddEmployeeDTO : EditEmployeeDTO
 	{
 		[JsonProperty("salary")]
 		public string Salary { get; set; }

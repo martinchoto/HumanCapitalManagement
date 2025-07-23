@@ -72,6 +72,53 @@ namespace HumanCapitalManagement.Controllers
 
 			return Ok("Employee updated.");
 		}
+		[HttpDelete("delete/{id}")]
+		public async Task<IActionResult> DeleteDepartment(int id)
+		{
+			Department department = await _employeeService.GetDepartmentById(id);
+			if (department == null)
+			{
+				return BadRequest("Department not found.");
+			}
+			await _employeeService.DeleteDepartmentAsync(department);
+			return Ok("Department deleted.");
+		}
+		[HttpPost("create")]
+		public async Task<IActionResult> CreateDepartment([FromBody] DepartmentDTO departmentDTO)
+		{ 
+			if (departmentDTO == null || string.IsNullOrWhiteSpace(departmentDTO.Name))
+			{
+				return BadRequest("Invalid department data.");
+			}
+			List<DepartmentDTO> departments = await _employeeService.GetDepartments();
+
+			if (departments.Any(x => x.Name.Equals(departmentDTO.Name, StringComparison.OrdinalIgnoreCase)))
+			{
+				return Conflict("Department already exists.");
+			}
+			await _employeeService.CreateDepartment(departmentDTO);
+			return Ok("Department created successfully.");
+		}
+		[HttpPut("update/{id}")]
+		public async Task<IActionResult> UpdateDepartment(int id, [FromBody] DepartmentDTO departmentDTO)
+		{
+			if (departmentDTO == null || string.IsNullOrWhiteSpace(departmentDTO.Name))
+			{
+				return BadRequest("Invalid department data.");
+			}
+			Department existingDepartment = await _employeeService.GetDepartmentById(id);
+			if (existingDepartment == null)
+			{
+				return NotFound("Department not found.");
+			}
+			List<DepartmentDTO> departments = await _employeeService.GetDepartments();
+			if (departments.Any(x => x.Name.Equals(departmentDTO.Name, StringComparison.OrdinalIgnoreCase) && x.Id != id))
+			{
+				return Conflict("Department with this name already exists.");
+			}
+			await _employeeService.UpdateDepartmentAsync(existingDepartment, departmentDTO);
+			return Ok("Department updated successfully.");
+		}
 		private string GetUserId() => User.FindFirstValue(ClaimTypes.NameIdentifier);
 	}
 }

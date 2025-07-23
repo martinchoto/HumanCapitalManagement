@@ -7,9 +7,9 @@ namespace HumanCapitalManagement.Services.Interfaces
 	{
 		Task<List<EmployeeDataDTO>> AllWorkers();
 		Task<List<RoleDTO>> GetRoles();	
-		Task<EditHRDTO> CreateEmployeeDTO(Employee employee);
+		Task<AddEmployeeDTO> CreateEmployeeDTO(Employee employee);
 
-		Task AddEmployee(EditHRDTO editHRDto);
+		Task AddEmployee(AddEmployeeDTO editHRDto);
 		Task DeleteEmployee(Employee employee);
 	}
 }

@@ -1,0 +1,84 @@
+﻿@page "/departments/all"
+@attribute [Authorize( Roles ="HR Admin")]
+@rendermode InteractiveServer
+<h3 class="text-center">All Departments</h3>
+@if (departments == null)
+{
+    <p>Loading...</p>
+}
+else 
+{
+    <table class="table table-striped text-center">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var dept in departments)
+            {
+                <tr>
+                    <td>@dept.Name</td>
+                    <td>
+                        <a class="btn btn-sm btn-primary me-1" href="/departments/update/@dept.Id">Edit</a>
+                        <button class="btn btn-sm btn-danger" @onclick="() => Delete(dept.Id)">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private HttpClient client => ClientFactory.CreateClient("ApiClient");
+    private string? message;
+    private List<DepartmentDTO>? departments;
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            departments = await client.GetFromJsonAsync<List<DepartmentDTO>>("api/department/all");
+            if (departments == null || departments.Count == 0)
+            {
+                message = "No departments found.";
+            }
+        }
+        catch (Exception ex)
+        {
+            message = $"Error fetching departments: {ex.Message}";
+        }
+	}
+    private async Task Delete(int id)
+    {
+        IJSRuntime jS = JS;
+        bool confirmed = await jS.InvokeAsync<bool>("showConfirm", $"Are you sure you want to delete department with {id}?");
+
+        if (confirmed)
+        {
+            try
+            {
+                var response = await client.DeleteAsync($"api/department/delete/{id}");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    message = $"Employee {id} deleted.";
+					StateHasChanged();
+                }
+                else
+                {
+                    var error = await response.Content.ReadAsStringAsync();
+                    message = $"Failed to delete: {error}";
+                }
+            }
+            catch (Exception ex)
+            {
+                message = $"Error: {ex.Message}";
+            }
+        }
+        else
+        {
+            message = "Deletion canceled.";
+        }
+	}
+}

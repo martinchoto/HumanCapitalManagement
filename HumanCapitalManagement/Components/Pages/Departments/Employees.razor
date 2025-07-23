@@ -1,4 +1,4 @@
-﻿@page "/employees"
+﻿@page "/my/employees"
 @attribute [Authorize(Roles = "Manager,HR Admin")]
 
 <h3 class="text-center mt-4">Employees in Your Department</h3>
@@ -40,7 +40,7 @@ else
 						<td>@emp.JobTitle</td>
 						<td>@emp.Salary.ToString("F2") lv.</td>
 						<td>
-							<a class="btn btn-sm btn-warning me-2" href="edit/@emp.Id">
+							<a class="btn btn-sm btn-warning me-2" href="manager/edit/@emp.Id">
 								<i class="fas fa-edit"></i> Edit
 							</a>
 						</td>

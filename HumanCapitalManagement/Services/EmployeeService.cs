@@ -101,7 +101,7 @@ namespace HumanManagementCapital.Services
 				.Include(x => x.Department).FirstOrDefaultAsync(x => x.Id == id);
 		}
 
-		public async Task UpdateEmployeeAsync(Employee employee, EditHRDTO editEmployeeDTO)
+		public async Task UpdateEmployeeAsync(Employee employee, AddEmployeeDTO editEmployeeDTO)
 		{
 			string[] fullName = editEmployeeDTO.FullName.Split(" ", 2);
 			employee.FirstName = fullName[0];
@@ -141,6 +141,40 @@ namespace HumanManagementCapital.Services
 				}
 			}
 			await _dbContext.SaveChangesAsync();
+		}
+
+		public async Task<Department> GetDepartmentById(int id)
+		{
+			return await _dbContext.Departments
+				.Where(d => d.Id == id)
+				.FirstOrDefaultAsync();
+		}
+
+		public async Task DeleteDepartmentAsync(Department department)
+		{
+			if (department.Employees == null || department.Employees.Any())
+			{
+				department.Employees.Clear();
+			}
+
+			_dbContext.Departments.Remove(department);
+			await _dbContext.SaveChangesAsync();
+		}
+
+		public async Task CreateDepartment(DepartmentDTO departmentDTO)
+		{
+			Department department = new Department
+			{
+				Name = departmentDTO.Name,
+			};
+			await _dbContext.Departments.AddAsync(department);
+			await _dbContext.SaveChangesAsync();
+		}
+
+		public Task UpdateDepartmentAsync(Department existingDepartment, DepartmentDTO departmentDTO)
+		{
+			existingDepartment.Name = departmentDTO.Name;
+			return _dbContext.SaveChangesAsync();
 		}
 	}
 }
