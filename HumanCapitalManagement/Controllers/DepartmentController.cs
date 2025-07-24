@@ -24,7 +24,6 @@ namespace HumanCapitalManagement.Controllers
 		{
 			_employeeService = employeeService;
 		}
-
 		[HttpGet("employees")]
 		public async Task<IActionResult> GetDepartmentEmployees()
 		{
@@ -51,10 +50,6 @@ namespace HumanCapitalManagement.Controllers
 			}
 			EditEmployeeDTO employeeDto = await _employeeService.CreateEmployeeDTO(employee);
 
-
-			if (employeeDto == null ||
-				(!User.IsInRole("HR Admin") && !User.IsInRole("Manager")))
-				return Forbid();
 
 			return Ok(employeeDto);
 		}

@@ -85,6 +85,7 @@ else
 		if (response.IsSuccessStatusCode)
 		{
 			message = "Updated successfully.";
+			NavigationManager.NavigateTo("/my-employees");
 		}
 		else
 		{
