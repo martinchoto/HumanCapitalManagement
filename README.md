@@ -19,9 +19,8 @@ Technology Stack
 .NET 8 / C#: The project targets .NET 8.0, using modern C# features and the minimal hosting model (see Program.cs)
 
 Blazor Server: UI is implemented with Blazor server-side components (Razor .razor files in the Components folder).
-ASP.NET Core Identity: Authentication and authorization are handled by Identity Core with Entity Framework stores
-raw.githubusercontent.com
-.
+ASP.NET Core Identity: Authentication and authorization are handled by Identity Core with Entity Framework stores.
+
 Entity Framework Core (EF Core) + SQL Server: Data access is via EF Core. The default database provider is SQL Server, configured with a connection string named "DefaultConnection"
 
 Dependency Injection: Follows ASP.NET Core DI conventions. Services like IEmployeeService, IHRService, and RoleService are registered in Program.cs and injected into controllers and components.
@@ -76,10 +75,10 @@ dotnet ef migrations add InitialCreate
 dotnet ef database update
 This creates the database schema based on the DbContext and entity models.
 Seed Roles and Users (Optional):
-The app expects roles "HR Admin" and "Manager" as shown in the controllers
+The app expects roles "HR Admin" and "Manager" as shown in the controllers.
 
 
-. You may need to create these roles (e.g. via a data seeder or Identity console) and assign them to user accounts.
+You may need to create these roles (e.g. via a data seeder or Identity console) and assign them to user accounts.
 By default, the Register page was removed (see Components/Account), so new users must be added either through a database script or from HR Manager account.
 
 Running Locally
@@ -106,10 +105,9 @@ These endpoints are secured with [Authorize] attributes, enforcing that only use
 
 
 Database and Migrations
-The application uses EF Core to interact with the database. The default connection string is "DefaultConnection", and SQL Server is configured in Program.cs (e.g. options.UseSqlServer(connectionString))
+The application uses EF Core to interact with the database. The default connection string is "DefaultConnection", and SQL Server is configured in Program.cs (e.g. options.UseSqlServer(connectionString)). 
 
-
-. If database migrations are not included, you must add them using the EF Core CLI as shown above. After updating the database, the necessary tables (users, roles, employees, departments, salary records, etc.) will be created.
+If database migrations are not included, you must add them using the EF Core CLI as shown above. After updating the database, the necessary tables (users, roles, employees, departments, salary records, etc.) will be created.
 Tip: In development, the app is configured to use the Developer Exception Page and database error pages (UseMigrationsEndPoint) when in a development environment
 
 
@@ -120,10 +118,7 @@ Roles: The code uses two roles, Manager and HR Admin, as seen in the controllers
 
 HR Admin can manage all employees, departments, and salaries.
 Manager can typically manage their own department’s employees and view department info.
-Role setup: The Program.cs registers Identity and calls .AddRoles<IdentityRole>()
-
-
-,so the roles can be created at runtime. You need to uncomment the lines in the DbContext to seed the database.
+Role setup: The Program.cs registers Identity and calls .AddRoles<IdentityRole>(), so the roles can be created at runtime. You need to uncomment the lines in the DbContext to seed the database.
 
 Contributing and Extending
 Coding conventions: The project follows standard ASP.NET Core patterns. Services implement interfaces (e.g. IEmployeeService) and are injected where needed. Feel free to add new services or pages following the existing structure.
