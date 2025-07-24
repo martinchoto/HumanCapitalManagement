@@ -72,7 +72,11 @@ namespace HumanCapitalManagement.Controllers
 		public async Task<IActionResult> GetSalaryRecords(int employeeId)
 		{
 			List<SalaryRecordDTO> salaryRecords = await _hrService.GetSalaryRecordDTOs(employeeId);
-			if (salaryRecords == null || !salaryRecords.Any())
+			if (salaryRecords == null)
+			{
+				return NotFound($"No salary records found for employee with ID {employeeId}.");
+			}
+			if (!salaryRecords.Any())
 			{
 				return Ok(new List<SalaryRecordDTO>());
 			}
