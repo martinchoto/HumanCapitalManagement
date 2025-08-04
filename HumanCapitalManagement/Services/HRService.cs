@@ -108,10 +108,10 @@ namespace HumanCapitalManagement.Services
 				JobTitle = dto.JobTitle,
 				Country = dto.Country,
             };
-
 			if (IsIbanValid(dto.IBAN))
 			{
-				employee.EncryptedIBAN = EncryptionHelper.Encrypt(dto.IBAN);
+				dto.IBAN = dto.IBAN.Replace(" ", "").ToUpperInvariant();
+                employee.EncryptedIBAN = EncryptionHelper.Encrypt(dto.IBAN);
 			}
 			else
 			{
