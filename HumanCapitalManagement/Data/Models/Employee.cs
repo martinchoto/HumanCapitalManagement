@@ -18,7 +18,20 @@ namespace HumanCapitalManagement.Data.Models
 		[Required]
 		public string JobTitle { get; set; } = null!;
 		public decimal Salary { get; set; }
-		[ForeignKey(nameof(Department))]
+		[Required]
+		public string Country { get; set; } = null!;
+		[Required]
+		public string EncryptedIBAN { get; set; } = null!;
+
+        [NotMapped]
+        [StringLength(34, MinimumLength = 15, ErrorMessage = "IBAN must be between 15 and 34 characters.")]
+        [RegularExpression(@"^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$", ErrorMessage = "Invalid IBAN format.")]
+        public string? IBAN
+        {
+            get => EncryptedIBAN == null ? null : EncryptionHelper.Decrypt(EncryptedIBAN);
+            set => EncryptedIBAN = value == null ? null : EncryptionHelper.Encrypt(value);
+        }
+        [ForeignKey(nameof(Department))]
 		public int DepartmentId { get; set; }
 		public Department Department { get; set; } = null!;
 		[ForeignKey(nameof(User))]
