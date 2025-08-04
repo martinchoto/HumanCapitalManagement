@@ -1,4 +1,5 @@
-﻿using HumanCapitalManagement.Components.Pages;
+﻿using System.Text.RegularExpressions;
+using HumanCapitalManagement.Components.Pages;
 using HumanCapitalManagement.Data;
 using HumanCapitalManagement.Data.Models;
 using HumanCapitalManagement.DTOs;
@@ -97,21 +98,6 @@ namespace HumanCapitalManagement.Services
 				Email = dto.Email,
 			};
 
-			var createResult = await _userManager.CreateAsync(user, "admin");
-			if (!createResult.Succeeded)
-			{
-				throw new Exception("Can't add this user!");
-			}
-
-			if (!string.IsNullOrWhiteSpace(dto.Role))
-			{
-				var roleResult = await _userManager.AddToRoleAsync(user, dto.Role);
-				if (!roleResult.Succeeded)
-				{
-					throw new Exception("Can't add this role.");
-				}
-			}
-
 			var employee = new Employee
 			{
 				UserId = user.Id,
@@ -119,10 +105,20 @@ namespace HumanCapitalManagement.Services
 				LastName = lastName,
 				CompanyEmail = dto.Email,
 				DepartmentId = dto.DepartmentId,
-				JobTitle = dto.JobTitle
-			};
+				JobTitle = dto.JobTitle,
+				Country = dto.Country,
+            };
 
-			if (decimal.TryParse(dto.Salary, out var salary))
+			if (IsIbanValid(dto.IBAN))
+			{
+				employee.EncryptedIBAN = EncryptionHelper.Encrypt(dto.IBAN);
+			}
+			else
+			{
+				throw new Exception("Invalid IBAN format.");
+            }
+
+            if (decimal.TryParse(dto.Salary, out var salary))
 			{
 				employee.Salary = salary;
 			}
@@ -130,11 +126,27 @@ namespace HumanCapitalManagement.Services
 			{
 				throw new Exception("Invalid salary format.");
 			}
+            await _userManager.CreateAsync(user, "admin");
 
-			_dbContext.Employees.Add(employee);
+            if (!string.IsNullOrWhiteSpace(dto.Role))
+            {
+                var roleResult = await _userManager.AddToRoleAsync(user, dto.Role);
+                if (!roleResult.Succeeded)
+                {
+                    throw new Exception("Can't add this role.");
+                }
+            }
+            await _dbContext.Employees.AddAsync(employee);
 			await _dbContext.SaveChangesAsync();
 		}
+		private bool IsIbanValid(string inputIban)
+		{
+            if (string.IsNullOrWhiteSpace(inputIban)) return false;
 
+			Regex regex = new Regex(Constants.IBANREGEXPATTERN);
+            inputIban = inputIban.Replace(" ", "").ToUpperInvariant();
+            return inputIban.Length >= Constants.MIN_IBAN_LENGTH && inputIban.Length <= Constants.MAX_IBAN_LENGTH && regex.IsMatch(inputIban);
+        } 
 		public async Task DeleteEmployee(Employee employee)
 		{
 			if (employee == null)

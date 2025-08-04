@@ -1,54 +1,63 @@
 ﻿@page "/hr/add"
 @attribute [Authorize(Roles = "HR Admin")]
 <h3 class="mt-4 text-center">Create Account</h3>
-	<div class="text-center">
-		<StatusMessage Message="@message" />
-	</div>
-	<EditForm Model="updateModel" OnValidSubmit="SubmitForm" FormName="EditProfileForm">
-		<DataAnnotationsValidator />
-		<ValidationSummary />
-		<div class="row justify-content-center text-center">
-			<div class="col-md-6">
+<div class="text-center">
+	<StatusMessage Message="@message" />
+</div>
+<EditForm Model="updateModel" OnValidSubmit="SubmitForm" FormName="EditProfileForm">
+	<DataAnnotationsValidator />
+	<ValidationSummary />
+	<div class="row justify-content-center text-center">
+		<div class="col-md-6">
 
-				<div class="mb-3">
-					<label>Full Name</label>
-					<InputText @bind-Value="updateModel.FullName" class="form-control" />
-				</div>
-
-				<div class="mb-3">
-					<label>Email</label>
-					<InputText @bind-Value="updateModel.Email" class="form-control" />
-				</div>
-
-				<InputSelect @bind-Value="updateModel.DepartmentId" class="form-control">
-					@foreach (var dep in departmentDTOs)
-					{
-						<option value="@dep.Id">@dep.Name</option>
-					}
-				</InputSelect>
-
-
-				<div class="mb-3">
-					<label>Job Title</label>
-					<InputText @bind-Value="updateModel.JobTitle" class="form-control" />
-				</div>
-				<div class="mb-3">
-					<label>Salary</label>
-					<InputText @bind-Value="updateModel.Salary" class="form-control" />
-				</div>
-				<InputSelect @bind-Value="updateModel.Role" class="form-control">
-					@foreach (var roles in roleDTOs)
-					{
-						<option value="@roles.Name">@roles.Name</option>
-					}
-				</InputSelect>
-
-				<button type="submit" class="btn btn-primary w-100">Save Changes</button>
-
+			<div class="mb-3">
+				<label>Full Name</label>
+				<InputText @bind-Value="updateModel.FullName" class="form-control" />
 			</div>
-		</div>
 
-	</EditForm>
+			<div class="mb-3">
+				<label>Email</label>
+				<InputText @bind-Value="updateModel.Email" class="form-control" />
+			</div>
+
+			<InputSelect @bind-Value="updateModel.DepartmentId" class="form-control">
+				@foreach (var dep in departmentDTOs)
+				{
+					<option value="@dep.Id">@dep.Name</option>
+				}
+			</InputSelect>
+
+
+			<div class="mb-3">
+				<label>Job Title</label>
+				<InputText @bind-Value="updateModel.JobTitle" class="form-control" />
+			</div>
+			<div class="mb-3">
+				<label>Salary</label>
+				<InputText @bind-Value="updateModel.Salary" class="form-control" />
+			</div>
+
+				<div class="mb-3">
+				<label>Country</label>
+				<InputText @bind-Value="updateModel.Country" class="form-control" />
+			</div>
+			<div class="mb-3">
+				<label>IBAN</label>
+				<InputText @bind-Value="updateModel.IBAN" class="form-control" />
+			</div>
+			<InputSelect @bind-Value="updateModel.Role" class="form-control">
+				@foreach (var roles in roleDTOs)
+				{
+					<option value="@roles.Name">@roles.Name</option>
+				}
+			</InputSelect>
+
+			<button type="submit" class="btn btn-primary w-100">Save Changes</button>
+
+		</div>
+	</div>
+
+</EditForm>
 @code {
 	private string? message;
 	private List<DepartmentDTO> departmentDTOs = new();
@@ -78,7 +87,8 @@
 		}
 		else
 		{
-			message = "Added failed.";
+			var error = await response.Content.ReadAsStringAsync();
+			message = $"❌ Failed: {error}";
 		}
 	}
 }

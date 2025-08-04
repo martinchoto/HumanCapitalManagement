@@ -43,6 +43,14 @@ else
 					<label>Salary</label>
 					<InputText @bind-Value="updateModel.Salary" class="form-control" />
 				</div>
+				<div class="mb-3">
+					<label>Country</label>
+					<InputText @bind-Value="updateModel.Country" class="form-control" />
+				</div>
+				<div class="mb-3">
+					<label>IBAN</label>
+					<InputText @bind-Value="updateModel.IBAN" class="form-control" />
+				</div>
 				<InputSelect @bind-Value="updateModel.Role" class="form-control">
 					@foreach (var roles in roleDTOs)
 					{

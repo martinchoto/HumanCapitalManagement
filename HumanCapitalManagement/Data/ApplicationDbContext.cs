@@ -42,9 +42,9 @@ namespace HumanCapitalManagement.Data
 		   .OnDelete(DeleteBehavior.Restrict);
 
 			// Uncomment if you want to seed 
-			//SeedDatabase.SeedRoles(modelBuilder); 
-			//SeedDatabase.SeedDepartments(modelBuilder);
-			//SeedDatabase.SeedUsersAndEmployees(modelBuilder);
+			SeedDatabase.SeedRoles(modelBuilder); 
+			SeedDatabase.SeedDepartments(modelBuilder);
+			SeedDatabase.SeedUsersAndEmployees(modelBuilder);
 		}
 	}
 
