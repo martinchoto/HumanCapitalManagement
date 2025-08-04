@@ -5,6 +5,7 @@
 @using HumanCapitalManagement.Services
 @inject WorkingDaysAPIService WorkingDaysService
 @inject CountriesAPIService CountriesAPIService
+@rendermode InteractiveServer
 @if (employeeData == null)
 {
 	<div class="alert alert-warning text-center mt-5">
@@ -33,8 +34,8 @@ else
 								<span class="badge bg-primary">@employeeData.JobTitle</span>
 							</div>
 
-							<div class="col-md-8">
-								<dl class="row">
+							<div class="col-md-8 text-center">
+								<dl class="row text-center">
 
 									<dt class="col-sm-4">Email</dt>
 									<dd class="col-sm-8">
@@ -42,9 +43,7 @@ else
 									</dd>
 
 									<dt class="col-sm-4">Salary</dt>
-									<dd class="col-sm-8">@employeeData.Salary.ToString("f2") lv.</dd>
-
-
+									<dd class="col-sm-8">@employeeData.Salary.ToString("f2") BGN</dd>
 
 									<dt class="col-sm-4">Country</dt>
 									<dd class="col-sm-8"><img src=@imageURl>@employeeData.Country</dd>
@@ -58,19 +57,31 @@ else
 										System.Globalization.CultureInfo.InvariantCulture)
 								</dd>
 
-								<dt class="col-sm-4">
-									Number of working days in
-									@CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(selectedMonth) @DateTime.Now.Year
-								</dt>
-								<dd class="col-sm-8">@workingDaysDisplay</dd>
-							</dl>
+								<dt class="col-sm-4">Select Month</dt>
+								<dd class="col-sm-8">
+									<InputSelect Value="selectedMonth"
+												 ValueChanged="@(EventCallback.Factory.Create<int>(this, OnMonthChanged))"
+												 ValueExpression="() => selectedMonth"
+												 class="form-select">
+										@for (int i = 1; i <= 12; i++)
+											{
+												<option class="text-center" value="@i">@CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(i)</option>
+											}
+										</InputSelect>
+									</dd>
+
+									<dt class="col-sm-4">
+										Working Days in @CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(selectedMonth) @DateTime.Now.Year
+									</dt>
+									<dd class="col-sm-8">@workingDaysDisplay</dd>
+								</dl>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
 }
 
 @code {
@@ -80,6 +91,7 @@ else
 	private string countryCCA2;
 	private string? workingDaysDisplay;
 	private string imageURl;
+	string empty = "This is empty";
 
 	protected override async Task OnInitializedAsync()
 	{
@@ -98,4 +110,18 @@ else
 		var result = await WorkingDaysService.GetWorkingDaysAsync(countryCCA2, selectedMonth);
 		workingDaysDisplay = result?.ToString() ?? "N/A";
 	}
+	private async Task OnMonthChanged(int newValue)
+	{
+		selectedMonth = newValue;
+
+		if (string.IsNullOrEmpty(countryCCA2))
+		{
+			workingDaysDisplay = "No country code";
+			return;
+		}
+
+		var result = await WorkingDaysService.GetWorkingDaysAsync(countryCCA2, selectedMonth);
+		workingDaysDisplay = result?.ToString() ?? "N/A";
+	}
 }
+
