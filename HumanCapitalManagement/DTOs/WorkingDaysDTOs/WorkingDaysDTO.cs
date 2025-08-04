@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace HumanCapitalManagement.DTOs
+namespace HumanCapitalManagement.DTOs.WorkingDaysDTOs
 {
     public class WorkingDaysDTO
     {

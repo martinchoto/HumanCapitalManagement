@@ -76,6 +76,7 @@ builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSe
 builder.Services.AddScoped<IHRService, HRService>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 builder.Services.AddScoped<WorkingDaysAPIService>();
+builder.Services.AddScoped<CountriesAPIService>();
 
 
 

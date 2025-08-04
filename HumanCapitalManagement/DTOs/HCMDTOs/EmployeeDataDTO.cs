@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Newtonsoft.Json;
 
-namespace HumanCapitalManagement.DTOs
+namespace HumanCapitalManagement.DTOs.HCMDTOs
 {
 	public class EmployeeDataDTO : PersonalEmployeeDTO
 	{

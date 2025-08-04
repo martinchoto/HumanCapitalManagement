@@ -1,5 +1,6 @@
 ﻿using HumanCapitalManagement.Data.Models;
 using HumanCapitalManagement.DTOs;
+using HumanCapitalManagement.DTOs.HCMDTOs;
 using HumanCapitalManagement.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;

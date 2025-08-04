@@ -1,5 +1,5 @@
 ﻿using HumanCapitalManagement.Data.Models;
-using HumanCapitalManagement.DTOs;
+using HumanCapitalManagement.DTOs.HCMDTOs;
 
 namespace HumanCapitalManagement.Services.Interfaces
 {

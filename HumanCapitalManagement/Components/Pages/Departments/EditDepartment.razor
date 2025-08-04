@@ -1,4 +1,5 @@
 ﻿@page "/departments/update/{EditId:int}"
+@using HumanCapitalManagement.DTOs.HCMDTOs
 @attribute [Authorize(Roles = "HR Admin")]
 <h3 class="text-center">Edit Department</h3>
 <StatusMessage Message="@message" />

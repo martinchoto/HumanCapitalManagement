@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HumanCapitalManagement.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250804100148_newDb")]
-    partial class newDb
+    [Migration("20250804152046_DbInit")]
+    partial class DbInit
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -71,552 +71,552 @@ namespace HumanCapitalManagement.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "2a561aab-d12b-4391-9132-f7da67125396",
-                            ConcurrencyStamp = "2771987f-1f18-4308-a5bf-e05dfbc90a69",
+                            Id = "807ffea6-a378-4b09-90c3-cbc53690a228",
+                            ConcurrencyStamp = "bcc8f8db-2b4c-430c-af42-5b07034211ce",
                             Email = "johndoe1@personal.gmail",
                             NormalizedEmail = "JOHNDOE1@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE1",
-                            PasswordHash = "AQAAAAIAAYagAAAAEP+k+gHYdDb+iPFpkt5azFsDpfmGvX/vK151e0ztvf7NAoL3bNY6SLRPvJovFoZhPg==",
-                            SecurityStamp = "755a5993-af47-4f85-961a-0303c2b4038f",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPiCod0nY8YMD1me8IYwaFXhMbznd6ViK8kb/yEDiWh+G6l+z1EOgcX8F0bAwFT/UA==",
+                            SecurityStamp = "0db7654b-c8c1-489c-9795-34bc30256721",
                             UserName = "JohnDoe1"
                         },
                         new
                         {
-                            Id = "d2e4957d-cef0-4062-a6c9-3f588f13f58f",
-                            ConcurrencyStamp = "ac918798-6fad-4d4b-a2e9-25327d4d300b",
+                            Id = "e1569033-d81c-467c-b249-e8bb3e16100e",
+                            ConcurrencyStamp = "cbc14b9b-2efd-4218-9f9f-b724a202f274",
                             Email = "johndoe2@personal.gmail",
                             NormalizedEmail = "JOHNDOE2@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE2",
-                            PasswordHash = "AQAAAAIAAYagAAAAEJpHdlo01Hr7JwMOIQ8Oj3z4bBBKasgmSKt7/5ZmwZYcwAq7XU9eT9BqQBNE5HHbVg==",
-                            SecurityStamp = "7ab6bbf3-0768-430d-bac6-27c03b288a85",
+                            PasswordHash = "AQAAAAIAAYagAAAAEKLprRwDl98ONZv7nQT8OJx2E52rMVQ/6LqQX4YKrJB7rOTCev+vaxEH6ywX7+dFQQ==",
+                            SecurityStamp = "a9276a60-6f7c-4b82-bec7-aa7bd23d2596",
                             UserName = "JohnDoe2"
                         },
                         new
                         {
-                            Id = "6951b2ae-f6f4-4da5-9136-b25004c28f9c",
-                            ConcurrencyStamp = "cc988eaf-c0f2-44fb-bdad-22218dce8429",
+                            Id = "f0a80dde-96fe-4611-9bee-44ca68cfba4c",
+                            ConcurrencyStamp = "ca5da5d0-9c7c-4159-b0b1-f67d687b1cea",
                             Email = "johndoe3@personal.gmail",
                             NormalizedEmail = "JOHNDOE3@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE3",
-                            PasswordHash = "AQAAAAIAAYagAAAAEJGcvtmE+t2W9irvShNKyB4oB++MVl33hmop07StGxewq7tmf4/jnOLYp/3XiE872g==",
-                            SecurityStamp = "210e184e-895a-431c-b694-59829a130a4d",
+                            PasswordHash = "AQAAAAIAAYagAAAAEKoj1f2/WIDdae18R93lBByL5hEtfMzezz2+373xrmq4XLDvYN618pkxHzDGYHYc/w==",
+                            SecurityStamp = "00a57427-df0c-4773-b134-046a079f2468",
                             UserName = "JohnDoe3"
                         },
                         new
                         {
-                            Id = "0b2c6feb-b642-49f8-84ef-680d3ff2c344",
-                            ConcurrencyStamp = "1f266754-9c4e-41d8-b6c4-1ff462ef71ab",
+                            Id = "231bbd41-d41b-408a-82af-7f9c09aedadd",
+                            ConcurrencyStamp = "b13a4219-8bd4-4f89-8c5d-49b7dc47d3b3",
                             Email = "johndoe4@personal.gmail",
                             NormalizedEmail = "JOHNDOE4@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE4",
-                            PasswordHash = "AQAAAAIAAYagAAAAEB4197R7o4wvQF11B1c/SwXW4KpeT+SjWaY0yryf9OaABwBMldGEQgslrcIG1Fw8cA==",
-                            SecurityStamp = "b7599c58-1cae-4019-b115-8772a7c23989",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPR06EAbJ80MdMaNiuEAyZEyCowKoNA5l60p4fB06VNDg/eVuWaGNUHVO5ORyjCiQA==",
+                            SecurityStamp = "53258e01-cf7f-404e-99a1-50e9eedf1fe6",
                             UserName = "JohnDoe4"
                         },
                         new
                         {
-                            Id = "726d58c1-73fa-43fb-b3fb-48ec29b2ac5c",
-                            ConcurrencyStamp = "d9684abf-1e50-482c-9a41-f75e93efe822",
+                            Id = "7827929f-837c-4c79-9aa6-6a025f9309c8",
+                            ConcurrencyStamp = "29b96cd1-b080-459d-bc1c-c3ecea54b486",
                             Email = "johndoe5@personal.gmail",
                             NormalizedEmail = "JOHNDOE5@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE5",
-                            PasswordHash = "AQAAAAIAAYagAAAAEPaCSMzZo/lxHTp5Sr3hgybojTFktI5Ccn6ehg3n362SOEnhyuZO0NZa0WcagQ36VA==",
-                            SecurityStamp = "a56ae11d-07f8-4093-9099-35828ce115c5",
+                            PasswordHash = "AQAAAAIAAYagAAAAED95jy1zRYz+5xmO3pvl5RGHZH9BG7TmwBzpydi65QiBA53j7cazJCGEpd+DY64KTQ==",
+                            SecurityStamp = "56e57cf1-294c-4668-8556-ee5eef56bf2a",
                             UserName = "JohnDoe5"
                         },
                         new
                         {
-                            Id = "f7afdc1e-c904-44e2-9224-43e4aecbc673",
-                            ConcurrencyStamp = "ffc48d3a-988a-4907-a723-116283d37018",
+                            Id = "385e6370-3ae5-465e-bd9d-d13902f11c83",
+                            ConcurrencyStamp = "3493f3de-e7bf-4e43-96e6-db42c4a654f4",
                             Email = "johndoe6@personal.gmail",
                             NormalizedEmail = "JOHNDOE6@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE6",
-                            PasswordHash = "AQAAAAIAAYagAAAAEOzs+RDXXW7oHcpVrt2Gqno8sOUVZN0I6GClIJF+n6jjpnUGjaUTzVyM6lh4sX0NNw==",
-                            SecurityStamp = "05d926bd-66ea-47ff-892d-57c14c0c602f",
+                            PasswordHash = "AQAAAAIAAYagAAAAEDnLYBkxjvjFo69Za8Lv/IKAnLUPJ9amK7MyYi8psPB8siCAKKR9sqjMWLRqlIw+SQ==",
+                            SecurityStamp = "1959f1a1-ba09-403c-b533-a7ff95fce2d4",
                             UserName = "JohnDoe6"
                         },
                         new
                         {
-                            Id = "e2a94c68-334a-4305-b96b-46693e124d1b",
-                            ConcurrencyStamp = "a7e67950-1c95-4a32-b5fe-1211307c98f0",
+                            Id = "38292939-4e0e-4d33-b8c9-aa99b6c033be",
+                            ConcurrencyStamp = "3598ca6d-1b5d-44f2-98ec-3001163f986a",
                             Email = "johndoe7@personal.gmail",
                             NormalizedEmail = "JOHNDOE7@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE7",
-                            PasswordHash = "AQAAAAIAAYagAAAAELOdIV/MpydcozYco8xh+6AKzHn0MEmfAQCDVnfJfEgBP0S58kz/Zk1o+m+HrRYYsw==",
-                            SecurityStamp = "8f896a87-1ff9-420d-87ee-986681dd878d",
+                            PasswordHash = "AQAAAAIAAYagAAAAEEYIwQBY5uISo0cPzelGHR5NwBFms6ScqW8tfpzvWOuKGiMsdux6QX+yFpeaioeNyQ==",
+                            SecurityStamp = "a888635c-2661-4cb1-85c2-5b3b4a7d6f9a",
                             UserName = "JohnDoe7"
                         },
                         new
                         {
-                            Id = "8e0bcaef-52af-4021-b2f3-1f2770d38d52",
-                            ConcurrencyStamp = "bbfd9792-6748-4ba9-8d0c-56a3ef0944c8",
+                            Id = "6a21b06b-55ea-42b4-a104-90089134e536",
+                            ConcurrencyStamp = "4286a1b2-c10b-4dce-84b0-193ea1745727",
                             Email = "johndoe8@personal.gmail",
                             NormalizedEmail = "JOHNDOE8@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE8",
-                            PasswordHash = "AQAAAAIAAYagAAAAEKFHGoq/OBkq+NSx/be4MD8OLZeFUHq7agzNL2qjvcSBuzbk1omjYBJUt9VhAaRTjg==",
-                            SecurityStamp = "4804527f-8faa-4c1e-8285-f3d729fad26f",
+                            PasswordHash = "AQAAAAIAAYagAAAAELcJr2qgcgxp720JoqHGCwjpYFsR2m6/wIvFUgalmBrNqB9ZbO5Bzwhi2qJBpJKRLg==",
+                            SecurityStamp = "bc776a81-2278-4ffd-a3b8-aa6d2fac8cf6",
                             UserName = "JohnDoe8"
                         },
                         new
                         {
-                            Id = "c5c20525-4a8f-4a6f-bd5f-70cafc974b97",
-                            ConcurrencyStamp = "b44c5178-c1fa-444e-9761-456aee1020fc",
+                            Id = "7c7d1d58-5431-4628-95a4-65b25a10f771",
+                            ConcurrencyStamp = "829cdaf7-010e-42ff-b50b-b7c0fe4dcca2",
                             Email = "johndoe9@personal.gmail",
                             NormalizedEmail = "JOHNDOE9@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE9",
-                            PasswordHash = "AQAAAAIAAYagAAAAEHJAt2/YhFskGPGnVYf1YEBlE8fCSJwWH7vDFzt36nAyo/eoWk+gwYlgPsIiTWhOLw==",
-                            SecurityStamp = "6a260fa4-83ac-4e1c-b527-24aa63241b27",
+                            PasswordHash = "AQAAAAIAAYagAAAAEGFHc7wwzTcpXu3XWxxGfj8m5VyMoYKauqN0pctI7hV9nRL5lrKDU7gDwuxoP6N0XQ==",
+                            SecurityStamp = "dd9eb9ae-672e-4b89-9157-309f56c09eba",
                             UserName = "JohnDoe9"
                         },
                         new
                         {
-                            Id = "7da74fd5-160f-4cd6-91b2-8628f4f47a83",
-                            ConcurrencyStamp = "17f66d17-b8fa-49b1-9865-ab2b600c3aa4",
+                            Id = "4849c0a0-5253-46dc-b38c-a80744f6a224",
+                            ConcurrencyStamp = "df327ab9-df0e-4e88-b7a7-734097976ad1",
                             Email = "johndoe10@personal.gmail",
                             NormalizedEmail = "JOHNDOE10@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE10",
-                            PasswordHash = "AQAAAAIAAYagAAAAEB8lLRu95dWH3zRuyUgUYWJNqXOcIQi/ouQL5/KPVidgu/xaIXWjh4fEc7HimECe5Q==",
-                            SecurityStamp = "edf319de-412d-4078-974d-517b7a6418b4",
+                            PasswordHash = "AQAAAAIAAYagAAAAEJtKAVWHfflapqv+siVSAutvJi1SJIVU9ngqeg/6SYZWdogAthpLWMlovwAvmk2XUw==",
+                            SecurityStamp = "ea0554f5-4254-424d-a813-36119d2be49c",
                             UserName = "JohnDoe10"
                         },
                         new
                         {
-                            Id = "4eaa9c9e-8590-4534-960b-4c72ec5de01b",
-                            ConcurrencyStamp = "60831237-0670-4696-a762-b2bd81d9224e",
+                            Id = "711d97ad-25c9-40b8-b079-fc9e8ef748a2",
+                            ConcurrencyStamp = "124c29bd-c7c1-4cb5-a691-1f447e888026",
                             Email = "johndoe11@personal.gmail",
                             NormalizedEmail = "JOHNDOE11@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE11",
-                            PasswordHash = "AQAAAAIAAYagAAAAENEfp2d4INy7FudNFhYQvkfX3Qzoe4wJ4S82cf/lQ9CmRkbXUA23Wuv61q4lozFwLw==",
-                            SecurityStamp = "f06b7d07-8968-4918-938a-b65ac826de25",
+                            PasswordHash = "AQAAAAIAAYagAAAAEFmtpVMvjqUUO5IrBMEgxtSW05bglFVJw+rLDisDvoUHtfZYlT3osAiOL4mPqeSBbg==",
+                            SecurityStamp = "f29eaa94-b804-4873-8980-dbc24d5ca32f",
                             UserName = "JohnDoe11"
                         },
                         new
                         {
-                            Id = "7dd20390-ce34-4e8a-9989-7861830cb12d",
-                            ConcurrencyStamp = "7721debb-2a4d-4f0c-a47c-ab694827dfd8",
+                            Id = "889d02b1-8a37-43f5-94b8-feb07a4489bc",
+                            ConcurrencyStamp = "963ec5c3-c41f-4968-80bb-c7f0bbc11af9",
                             Email = "johndoe12@personal.gmail",
                             NormalizedEmail = "JOHNDOE12@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE12",
-                            PasswordHash = "AQAAAAIAAYagAAAAEM4RaF/ea6o5nNkVklQkSs1jR41AjTDHzGIVIhkBk3zN+rmjDXXaaCTq6eGm6kmlZQ==",
-                            SecurityStamp = "3e571394-622c-4207-a7aa-2deb97bdf33d",
+                            PasswordHash = "AQAAAAIAAYagAAAAEFzYd7dA/NQgutZPQFNFw1PsFNHXUshudE2zGIqyv/As8CKA3Y8+FjFCToOpNKVJWA==",
+                            SecurityStamp = "5cdc2a50-7671-4a36-9b03-dade0504463b",
                             UserName = "JohnDoe12"
                         },
                         new
                         {
-                            Id = "5b2bc7e2-8f2c-43c5-9027-99b354272660",
-                            ConcurrencyStamp = "31ea420d-64cd-4ed9-9028-c3c5e1200818",
+                            Id = "8177d6ef-90c9-4690-b3e8-bc5971204277",
+                            ConcurrencyStamp = "d8ed011e-00bf-4f8e-989e-5eaa359985a1",
                             Email = "johndoe13@personal.gmail",
                             NormalizedEmail = "JOHNDOE13@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE13",
-                            PasswordHash = "AQAAAAIAAYagAAAAEAcbdT1Rqtb+oyORu4ubnRLhMpRgwCgBFKcnvogRMhH+fVddooW+MvHzgLV9Z9/CRQ==",
-                            SecurityStamp = "739d364a-5481-42f7-afbe-703276b9d02f",
+                            PasswordHash = "AQAAAAIAAYagAAAAEEWKCNLB2c1uYLaeV3wDhaJh/+9nWwxR19U9QYqi9/tb+EnFbHKGNNQAVvhnn3UOKA==",
+                            SecurityStamp = "97154a62-30ae-42c9-a9f1-5aa4cb1d2a7e",
                             UserName = "JohnDoe13"
                         },
                         new
                         {
-                            Id = "6096bf5f-c034-4c83-91d5-f911cbe361ea",
-                            ConcurrencyStamp = "eb6f5b8b-595e-46bf-b9f7-dab6a5309a0e",
+                            Id = "2d4eb86b-684f-45e4-b4d7-c9716449878b",
+                            ConcurrencyStamp = "9a30467e-ae72-48ca-b46d-9ee69316c91c",
                             Email = "johndoe14@personal.gmail",
                             NormalizedEmail = "JOHNDOE14@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE14",
-                            PasswordHash = "AQAAAAIAAYagAAAAEJoZoQOqAF9JeHziiiICMgj+nCB3YV2HBnTBWQH5lD3QlsL9XimBkh+rYpOkKwaDow==",
-                            SecurityStamp = "37339ac0-1e71-4602-953b-bad2d522bc97",
+                            PasswordHash = "AQAAAAIAAYagAAAAEK7+cQ+eZQOHQIJvRv9c8hWVTXm1fKhF182cEjPpRG6P6bOy/j4hrcIBVs3kjJSMBA==",
+                            SecurityStamp = "dcd0c91b-dfd3-41c4-b680-febb393e149f",
                             UserName = "JohnDoe14"
                         },
                         new
                         {
-                            Id = "52404cf1-e1de-4159-a6c7-206d7eb1782a",
-                            ConcurrencyStamp = "a98bbe52-3741-4c69-8c4f-7fd96eb695ba",
+                            Id = "15620d8e-12da-41a7-80ee-6671ad4a0433",
+                            ConcurrencyStamp = "57d15120-3e07-4457-9fed-b2ca09e78787",
                             Email = "johndoe15@personal.gmail",
                             NormalizedEmail = "JOHNDOE15@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE15",
-                            PasswordHash = "AQAAAAIAAYagAAAAEHLuODXReu/xxFnrPEv7EBqOracfVUQU5PfVoJb2WOva7CVr5X/bA70SOU1LgvPV+g==",
-                            SecurityStamp = "c8e61b9e-266d-46fc-9dfd-5cdf01f490ed",
+                            PasswordHash = "AQAAAAIAAYagAAAAEKs3kdzSqFXfsjDL9mUNxHR0Cd9I0RDSG/E94aZijG4Mm1EQMBohdxSvP8eMQars1Q==",
+                            SecurityStamp = "93af864a-9a9f-49c6-a28a-94e35c7755e4",
                             UserName = "JohnDoe15"
                         },
                         new
                         {
-                            Id = "06ab1e2f-9194-447b-9847-70297d410585",
-                            ConcurrencyStamp = "1edcdf3c-e58f-4769-8067-e832b592cb7a",
+                            Id = "fe76c706-6f52-49c4-820f-6d378710df2f",
+                            ConcurrencyStamp = "2ae73e95-060f-4a5c-898b-fb32f86a4657",
                             Email = "johndoe16@personal.gmail",
                             NormalizedEmail = "JOHNDOE16@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE16",
-                            PasswordHash = "AQAAAAIAAYagAAAAEM6zI5LnE0L7zYLmBL+CPSVAWa/e6CfA4KrKQ/NdVvq/8mMoYBYqmK1H0NdWVdBVKQ==",
-                            SecurityStamp = "f16d6df4-0b86-451a-a22a-2ed6815032a7",
+                            PasswordHash = "AQAAAAIAAYagAAAAEDRbk84HY4SRs3SGMykVT3RydTTZu4z4MqyXXaxF0UHSNRJZw8rfhmnaPC2OdPBakw==",
+                            SecurityStamp = "559e7ffb-4c1e-4b7b-8c63-a6e0f0b6fcfe",
                             UserName = "JohnDoe16"
                         },
                         new
                         {
-                            Id = "d16589d3-e5e3-4c10-a858-c37d115d10ba",
-                            ConcurrencyStamp = "ebd75135-4fe7-4c57-90d7-aac5f5a8249d",
+                            Id = "eff03be9-2eda-4304-948c-55fc3d65a457",
+                            ConcurrencyStamp = "62741722-86da-4e2e-9eb3-f22922528408",
                             Email = "johndoe17@personal.gmail",
                             NormalizedEmail = "JOHNDOE17@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE17",
-                            PasswordHash = "AQAAAAIAAYagAAAAEFVkDjQx/8NUDtLQdvrbQxo2xG7UN/j99cDKs+GadSQ/5gZEoXel/wvWfRaeB9YFqw==",
-                            SecurityStamp = "2159fa7b-40c6-44a8-940b-3e98835c576e",
+                            PasswordHash = "AQAAAAIAAYagAAAAEJzbnzqphxm3GW3fct3Ze7nMynakYD4q2n0wI7cJkLBksveKQt99Hp6Grk1l4qVMkw==",
+                            SecurityStamp = "39a4a8d7-3821-482f-ad38-83829add921a",
                             UserName = "JohnDoe17"
                         },
                         new
                         {
-                            Id = "5328b4b2-c307-4932-8547-57857a70b30c",
-                            ConcurrencyStamp = "a8c1ee24-1c93-40ca-888a-a27d7bdcbf58",
+                            Id = "543d1a57-fd27-4089-8f92-83016b397cde",
+                            ConcurrencyStamp = "dda3ae5e-e061-4055-a07d-e9a1dc2d0f0c",
                             Email = "johndoe18@personal.gmail",
                             NormalizedEmail = "JOHNDOE18@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE18",
-                            PasswordHash = "AQAAAAIAAYagAAAAEIiFmpbrz68XTR3Lj2+QeaiYwRLOsjtqcyjiCSozCDA50tiEEIpEzTXwqjmxm8cWRQ==",
-                            SecurityStamp = "44338f50-9562-4462-a3e5-b23d1c9370ff",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPkYBVtCW/P+kETSSjo7hAZqMSE0hYiF9e6LYtRH/cOCAb1j3C5EWAEKb7trFD0Drw==",
+                            SecurityStamp = "ceef723d-8c4e-4d42-b6d0-fae6c876b30b",
                             UserName = "JohnDoe18"
                         },
                         new
                         {
-                            Id = "4b00f983-a2b3-4366-955b-85d1fa2ae6fb",
-                            ConcurrencyStamp = "11971ecd-fde4-43ed-877d-3c050cd67483",
+                            Id = "3bfd2e43-16ea-4d3e-a8cf-cc83bd9169cd",
+                            ConcurrencyStamp = "5ef9e99f-45ed-417e-bac4-6b50d11c36ee",
                             Email = "johndoe19@personal.gmail",
                             NormalizedEmail = "JOHNDOE19@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE19",
-                            PasswordHash = "AQAAAAIAAYagAAAAEHS4plJ3y7qxD8SZcZlE10pjP7zwLtbisVZ3T7DNJyj0koTQYkOsP4dDnZ2hbbsY8g==",
-                            SecurityStamp = "2aae78c9-e55b-477b-a42b-675948789147",
+                            PasswordHash = "AQAAAAIAAYagAAAAENSdr+kLG7CHejytHr1guzj3I6OFgmuHXnPF8/hDdziulOMgO8koH3w+rGvXTPOISQ==",
+                            SecurityStamp = "fe2638d8-5dc7-42f1-a5bf-49a4a8b80254",
                             UserName = "JohnDoe19"
                         },
                         new
                         {
-                            Id = "bbfed021-45ee-40a5-97b8-a2ac21c6d198",
-                            ConcurrencyStamp = "c9dc8b7f-884e-4f48-b154-2eba3cdda742",
+                            Id = "e5d87954-c9ce-496b-a84f-79dd729ea29e",
+                            ConcurrencyStamp = "6cdb3d33-77e5-43c6-b6cb-236c68db3825",
                             Email = "johndoe20@personal.gmail",
                             NormalizedEmail = "JOHNDOE20@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE20",
-                            PasswordHash = "AQAAAAIAAYagAAAAEIOgvc9zGxDCyBtYf4jhjxVDPmqfj4pfVHr3yadQLu3wfLt6rEV06p5Y2rjdDmWlUw==",
-                            SecurityStamp = "f7dbb8c3-9444-493d-968c-a2e95e8eba48",
+                            PasswordHash = "AQAAAAIAAYagAAAAEM+qBo8xvgcexbrUA46ZsRe0QqKp1VM7cLgSnrnrPWztTHcHHA9h1oAVkK8bzsHuVg==",
+                            SecurityStamp = "3d6f8e61-4b23-4b46-b9f7-43cdfaed4fc4",
                             UserName = "JohnDoe20"
                         },
                         new
                         {
-                            Id = "ab4fa6d6-d7b7-42da-a023-7b1a8e3d0b91",
-                            ConcurrencyStamp = "14915e06-479e-4a41-ba20-faffcce264d8",
+                            Id = "8ccba1c0-b8b3-4d13-abf7-ffaa356f9c28",
+                            ConcurrencyStamp = "d277cbdb-4cfc-4d00-b8d7-bdfe69bdc071",
                             Email = "johndoe21@personal.gmail",
                             NormalizedEmail = "JOHNDOE21@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE21",
-                            PasswordHash = "AQAAAAIAAYagAAAAEBlW5WXneo46iAi83fcpQs8wWPgdT7c6iEYM37wtyMQPJVh0UcNd1Mf+HZOXviTNmQ==",
-                            SecurityStamp = "d85d546b-48d3-4f8b-84e7-2cb936ba36c2",
+                            PasswordHash = "AQAAAAIAAYagAAAAEF7wZ6WSsjy6q5SgCUWXQwju50TIuQAaaOhV2a1YrHfp6KPlRbdlbsPAoSUo03Osog==",
+                            SecurityStamp = "85d7171f-412f-4d33-bb01-1422b43255c2",
                             UserName = "JohnDoe21"
                         },
                         new
                         {
-                            Id = "1023b4e0-446e-460b-8f95-aa88c57c26df",
-                            ConcurrencyStamp = "fcb02027-aaaf-470b-88e5-ce996e8b164f",
+                            Id = "5784b99e-69e3-4f8d-9217-c3cd1b4f4145",
+                            ConcurrencyStamp = "8c894027-cdee-4df7-88e5-5ce07a67ad8a",
                             Email = "johndoe22@personal.gmail",
                             NormalizedEmail = "JOHNDOE22@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE22",
-                            PasswordHash = "AQAAAAIAAYagAAAAEFegaNSeKWEl0yugpiw8E8qGOs6tA/2RlHqOLEUllA/MR64fRpL6/LUTZIi6JeAmJQ==",
-                            SecurityStamp = "58afc918-5ed9-43cf-b164-92feceb6cfca",
+                            PasswordHash = "AQAAAAIAAYagAAAAEI1XcFpGU9LYuNSr1YMPTl+pGNxzInavFR6QmETe7RnKP4I9J7K5LNytY61BtS2uBw==",
+                            SecurityStamp = "a5a0c907-91b3-4df3-8634-c8f22c28eb30",
                             UserName = "JohnDoe22"
                         },
                         new
                         {
-                            Id = "e871640c-a4bd-4299-b669-def9e01d4e67",
-                            ConcurrencyStamp = "97f00eb3-571c-4566-9d38-22937245d58f",
+                            Id = "0573bbba-a926-4845-a28d-b59dbee8e7a9",
+                            ConcurrencyStamp = "9f6a9e43-a7a8-4e33-8379-464b1953f547",
                             Email = "johndoe23@personal.gmail",
                             NormalizedEmail = "JOHNDOE23@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE23",
-                            PasswordHash = "AQAAAAIAAYagAAAAEEO42MSEo8Tzh5y7Zm8dzKxKnR4wh7Ro4ZUr/5ARJDGAFZHtz7YzI2iu1wmqpnU5XQ==",
-                            SecurityStamp = "3f32edb6-9dc5-4dbe-b75a-352a58423348",
+                            PasswordHash = "AQAAAAIAAYagAAAAEHCSNSJVggiXi4SOTlX63jJjxgiSSSq2ORwdoedGgmNxZM2JMRoVkyXTr6q1ZgD2RQ==",
+                            SecurityStamp = "bcfc07a3-a033-4176-8633-f9dec24b69bb",
                             UserName = "JohnDoe23"
                         },
                         new
                         {
-                            Id = "bd265674-3975-4d45-b2f4-dab47fe760f9",
-                            ConcurrencyStamp = "14071c6e-6b7d-4c74-b00b-1034919b15be",
+                            Id = "48a9ec2b-37c5-4483-988f-28956c4c8bc7",
+                            ConcurrencyStamp = "21878c8b-7d59-4741-a0cb-e05fa3a7d208",
                             Email = "johndoe24@personal.gmail",
                             NormalizedEmail = "JOHNDOE24@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE24",
-                            PasswordHash = "AQAAAAIAAYagAAAAECZSLcIgmu0y+fC46jjqWbXg0+cDrQooIC+gEWdx01dBOld/wk88ofRRSSaq3iGKPA==",
-                            SecurityStamp = "5842d493-32cf-4a16-bb13-35a407f7d2c4",
+                            PasswordHash = "AQAAAAIAAYagAAAAEI2OaRStfjKKbrocDqKwXlBlv9r65Rf+HzDZJ8W9sUbjfUKbRXrUt4J0zLfglk1ZFg==",
+                            SecurityStamp = "bc640612-444d-4369-b5d0-e065dc360403",
                             UserName = "JohnDoe24"
                         },
                         new
                         {
-                            Id = "a95df43d-3e6d-4291-989a-3aa48063e1ac",
-                            ConcurrencyStamp = "cdb19742-0284-4dd1-9310-d31dc85b9fa1",
+                            Id = "870fdb1b-aaa0-4df2-828b-c2b51af111e1",
+                            ConcurrencyStamp = "8e7c316c-598d-4115-bc3b-b85824607594",
                             Email = "johndoe25@personal.gmail",
                             NormalizedEmail = "JOHNDOE25@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE25",
-                            PasswordHash = "AQAAAAIAAYagAAAAEBp+BxoDDcOwGzkZczdaMKtHehDlv6Rt6fIJ9K0toyigmQvp3adZ1j4BqnGDfXfYkA==",
-                            SecurityStamp = "b5b07cc4-ab92-4bc5-adc2-03b3fddc9801",
+                            PasswordHash = "AQAAAAIAAYagAAAAEACS4B2H63YvMkh1VNMfpMkziaLX2Uxq/x3mrkR47VT/XFxwMkmZIPLpA3xkuc6Ufw==",
+                            SecurityStamp = "7cac8d02-9c97-4dd5-87fb-a318b757243c",
                             UserName = "JohnDoe25"
                         },
                         new
                         {
-                            Id = "f08881d5-7483-4eea-afc7-a1c402226c06",
-                            ConcurrencyStamp = "9f702875-4e1e-4a55-8569-1ba533de3555",
+                            Id = "870bc4c6-8719-4c65-9f1a-605762ec5f5c",
+                            ConcurrencyStamp = "cf39c3ea-b3e7-40a5-b10e-3520365a321e",
                             Email = "johndoe26@personal.gmail",
                             NormalizedEmail = "JOHNDOE26@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE26",
-                            PasswordHash = "AQAAAAIAAYagAAAAENbHy+BK9BCE68pYrLEzPUe7hWptDrITDZEK7mkQwoppuZCYHFWPHFG5tyyl4vgpnw==",
-                            SecurityStamp = "d6f7230f-a63b-4ac2-b359-dbf187156a63",
+                            PasswordHash = "AQAAAAIAAYagAAAAEMN0i5ee/pDWg2Hf6IA7ETnYFNFxAWuRIZXjQe5I5eWMZFgeWIPgsBmdzMxjLUVF+A==",
+                            SecurityStamp = "5c8f4a12-d5c6-4067-b647-02cb82a339ad",
                             UserName = "JohnDoe26"
                         },
                         new
                         {
-                            Id = "c04d52fb-9fe6-4782-80cc-1867821fce44",
-                            ConcurrencyStamp = "eeec70c4-bdbb-467e-ba06-ed8cad3dfae5",
+                            Id = "0bc32a8f-fadb-4f16-85f6-acfb652c7762",
+                            ConcurrencyStamp = "7fdec769-2d04-4e6c-83af-77bcb6e0bab8",
                             Email = "johndoe27@personal.gmail",
                             NormalizedEmail = "JOHNDOE27@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE27",
-                            PasswordHash = "AQAAAAIAAYagAAAAEGOfDdCpjgLo5kfwYcgWkixuCt8DqIwdeuIjf2hJRLEYCvToNrxbnRMTN/+8fO68QQ==",
-                            SecurityStamp = "1bcfbb8a-7bf9-4514-a7c2-654cf21c067e",
+                            PasswordHash = "AQAAAAIAAYagAAAAEFsN/1CoGrBObiViseFV7e6CYZpqe0MbEHAWRGHgG6Bicdaiv15c5UY+emjE5sjvbg==",
+                            SecurityStamp = "86fa7f06-f61c-45e2-bb02-ead0a599c4eb",
                             UserName = "JohnDoe27"
                         },
                         new
                         {
-                            Id = "8d51c159-6db7-466f-a48d-9dfecc31c543",
-                            ConcurrencyStamp = "00d08295-d24a-4e7c-8f77-45238a181438",
+                            Id = "f3f22722-2561-45a8-8602-99d3d7c08c4c",
+                            ConcurrencyStamp = "4a94b657-0a0e-4492-b621-5d16fc4000c1",
                             Email = "johndoe28@personal.gmail",
                             NormalizedEmail = "JOHNDOE28@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE28",
-                            PasswordHash = "AQAAAAIAAYagAAAAEFtVmZ6WeknmmMUukNZWbN+WQ4dU42blMVofdmZ6RbNWcOyp61qZvx+6JiMJCE5yiQ==",
-                            SecurityStamp = "73edaea2-1666-4978-8c6c-fa82e3f766da",
+                            PasswordHash = "AQAAAAIAAYagAAAAEIGraplLmRi9RhqNBz0BQf7C3rIRx5Q6sKDUzWln3N83rJ8s9XRiE74Ql+EyXBUilg==",
+                            SecurityStamp = "c402b85a-d205-4190-9df5-e296c4e7ee3e",
                             UserName = "JohnDoe28"
                         },
                         new
                         {
-                            Id = "994946ef-8443-4db5-9369-fe1c871577d1",
-                            ConcurrencyStamp = "8bb4b0c5-6f9c-41d5-b5ee-22d79b48ae89",
+                            Id = "56ced998-b75f-4d6e-bfd6-a681c2bb1bd9",
+                            ConcurrencyStamp = "6071da45-9c18-4e73-9b08-03d262c34edb",
                             Email = "johndoe29@personal.gmail",
                             NormalizedEmail = "JOHNDOE29@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE29",
-                            PasswordHash = "AQAAAAIAAYagAAAAEH9rOIYSZfINj0/+a8ZFPFh0M87BtWFyidOA1I5sVLebyBUKXduBWoYoVGzLAOTSXQ==",
-                            SecurityStamp = "1c875598-7820-4900-9c4f-0bac50b3b54f",
+                            PasswordHash = "AQAAAAIAAYagAAAAED907A+ylV22kW2S03w7VEs++NamOWcJ+TfAzh1Mi0U22pUPGbf8AwvAigahtlU2Iw==",
+                            SecurityStamp = "9b3565c4-d3b3-4781-9eae-8fe7d5e48002",
                             UserName = "JohnDoe29"
                         },
                         new
                         {
-                            Id = "fc28eb59-dcf7-46bf-81ff-bd16ef7171d8",
-                            ConcurrencyStamp = "16e1af7b-f8cc-45b0-9bcd-804538194340",
+                            Id = "f20b371a-4a74-47b5-ac13-82faa4a003df",
+                            ConcurrencyStamp = "284a1f51-63da-4567-9e96-8c5ed2515046",
                             Email = "johndoe30@personal.gmail",
                             NormalizedEmail = "JOHNDOE30@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE30",
-                            PasswordHash = "AQAAAAIAAYagAAAAEASEryBPw2B2a9Yz3QPOK65Azew6WEl9SFjWNAK9ZuN75//Nv/jSc9utXdC93XlttA==",
-                            SecurityStamp = "48bcf21d-98e7-4f6f-8271-37dee33a10f7",
+                            PasswordHash = "AQAAAAIAAYagAAAAEHayHX/rwvnUX3NL7bw/28Id0P1gDqSG0guv3zL0WcZY7E7/gJQteyRu+NoCHEDGIw==",
+                            SecurityStamp = "ca89c575-9e4a-4f32-83b1-2c6f5c884932",
                             UserName = "JohnDoe30"
                         },
                         new
                         {
-                            Id = "661d2c59-4abf-4f5f-b743-98be0e5644a9",
-                            ConcurrencyStamp = "80c2b5fe-c713-436b-8c51-fdc73b28f85c",
+                            Id = "6dd4a31c-08cb-4049-85fa-0c0d8e774b15",
+                            ConcurrencyStamp = "f0198ca9-a2a7-4adc-9a79-803b1481ec7e",
                             Email = "johndoe31@personal.gmail",
                             NormalizedEmail = "JOHNDOE31@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE31",
-                            PasswordHash = "AQAAAAIAAYagAAAAEBxtAjmyq/LwHxtf7/PWzcicxFB5lTwWopHMXxjTmbhdueUJBf0eEqol+YLvboA0VA==",
-                            SecurityStamp = "d5b1972f-5515-4397-a91e-5db9f27ce3e5",
+                            PasswordHash = "AQAAAAIAAYagAAAAEKreJSTD/YUyuPLJ2m28Zn43j5/gxO4J2LAPEg08oFqRIOwvWcFzJcjN2N4St1knKQ==",
+                            SecurityStamp = "27e4b9c7-8852-4bdf-b025-96828b65bad6",
                             UserName = "JohnDoe31"
                         },
                         new
                         {
-                            Id = "056a8e45-40e3-4665-ae80-a499e7ed4fd6",
-                            ConcurrencyStamp = "bbbf0d28-3ed9-49eb-b36b-b552a8a83bad",
+                            Id = "2fb7807a-edaa-4cf2-b413-689279eff9e6",
+                            ConcurrencyStamp = "b2460c60-e6ed-4012-aca8-8c7fb73c3cec",
                             Email = "johndoe32@personal.gmail",
                             NormalizedEmail = "JOHNDOE32@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE32",
-                            PasswordHash = "AQAAAAIAAYagAAAAEHEm6a6ICUjLa0FOaDZQcKct14ei8tzpJiZAnLsI05xcCxAV4CcY2Mqse9ITo3h2lw==",
-                            SecurityStamp = "7806503e-eb14-4573-8ac6-6e92a69be0fe",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPBSQK7MJs4cO4nowSesBlKKLcl6gONyo8oWQsJIVeUk+NO45iGRD3yUr2qqO90sIA==",
+                            SecurityStamp = "34495a9c-c65b-40f9-b1fe-35a9dfc8c084",
                             UserName = "JohnDoe32"
                         },
                         new
                         {
-                            Id = "af77617b-e2b5-4e09-8d9e-85d222d82564",
-                            ConcurrencyStamp = "da97d287-f090-4247-be7e-d42a0db98857",
+                            Id = "f54d0684-3e25-4c67-9950-ad6cc073f815",
+                            ConcurrencyStamp = "eab4a3a0-cbc7-4838-ab27-a7855d5efc30",
                             Email = "johndoe33@personal.gmail",
                             NormalizedEmail = "JOHNDOE33@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE33",
-                            PasswordHash = "AQAAAAIAAYagAAAAEInYxHdzZOEvhM4hOFKGCjk4/Ad9YlgsculDW3HDscO5SRps8WTqM7ceX/vSArrQbA==",
-                            SecurityStamp = "00dd8066-4269-49bf-b09f-833b74ca3fd2",
+                            PasswordHash = "AQAAAAIAAYagAAAAEIJyiLbflLMLS4/7z/KFm63dQhJOncBGFRiBndMxJ3glI+khE7eycYM84N+mI2YPVg==",
+                            SecurityStamp = "334ab9ea-a379-4a28-b080-2e1781529ff0",
                             UserName = "JohnDoe33"
                         },
                         new
                         {
-                            Id = "702b60fd-a373-4099-8c5a-5f4bbd869668",
-                            ConcurrencyStamp = "0a24bb27-d21e-45b1-bcac-e9dfd4ecba8c",
+                            Id = "7e567655-fbca-47b2-b50d-a090d51b7e6e",
+                            ConcurrencyStamp = "aa7d8f7d-f882-47fc-a06c-dcef86570584",
                             Email = "johndoe34@personal.gmail",
                             NormalizedEmail = "JOHNDOE34@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE34",
-                            PasswordHash = "AQAAAAIAAYagAAAAECRDPIrLqGwWUqiQgn4AXSFKXflzFlZSzenf8pulbqndXbXnbov6KauDkjB3GRg02w==",
-                            SecurityStamp = "6afd7a36-8a51-4d82-aae9-f1c6e5c089ed",
+                            PasswordHash = "AQAAAAIAAYagAAAAEH5PUbMl3ePJKHPPhRkj8Ovy+imghqiZqyjMMpoNu3A9RIyDRJeMvdHX/SQEoHNYdA==",
+                            SecurityStamp = "9f562078-084c-4bc3-a7b1-534935232cac",
                             UserName = "JohnDoe34"
                         },
                         new
                         {
-                            Id = "c16dbd99-0405-4ada-9298-1240a2f3c1b1",
-                            ConcurrencyStamp = "36f416a4-9da9-4ff1-a881-9b36cfa4e109",
+                            Id = "66c314f2-e23c-401d-abca-931b1a9172a5",
+                            ConcurrencyStamp = "ea535300-bc7d-4aed-af78-0af53591e0f0",
                             Email = "johndoe35@personal.gmail",
                             NormalizedEmail = "JOHNDOE35@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE35",
-                            PasswordHash = "AQAAAAIAAYagAAAAECBQcKDlwb+zgvGRpjCkAWyyqINy/fJ/yCcczI0Wc5hZpXSw6EmXGRFC4DvVZbJBsg==",
-                            SecurityStamp = "603e3d1f-105a-4f1d-8f62-d4653cc920ac",
+                            PasswordHash = "AQAAAAIAAYagAAAAEDF65tNITIeR+BIMfVkZnkdkD+/yY02m4Z4QSQdI3JKEpcUlbYoknnZSMOv2TeyNbQ==",
+                            SecurityStamp = "2ae1e6ba-0df3-4da2-97df-1b385a5b3d9d",
                             UserName = "JohnDoe35"
                         },
                         new
                         {
-                            Id = "e96bcfb5-e8fe-43e3-8cce-7d34630d395d",
-                            ConcurrencyStamp = "329842a2-810a-4876-8383-f1e8d1c8dba0",
+                            Id = "3856ea67-c0ec-49f5-8562-b551b9f4b4b5",
+                            ConcurrencyStamp = "e48ab97c-c66d-4b32-be47-51fe946c37f1",
                             Email = "johndoe36@personal.gmail",
                             NormalizedEmail = "JOHNDOE36@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE36",
-                            PasswordHash = "AQAAAAIAAYagAAAAEO2SXaGKuF0WpjtOZpmiqUXRUmQMoTySeKNM6y/kw30Byna9Kb05MJNm880WjmndFg==",
-                            SecurityStamp = "4769baf4-e368-493e-820b-55c29ce0b1bb",
+                            PasswordHash = "AQAAAAIAAYagAAAAEODMq2uXBc29n20yDXdHfxLZ/2kqPz3HjKTBivPZ5dxMipEkUYOy4/MyjM3DocP0qA==",
+                            SecurityStamp = "18115d65-35d8-4c93-b681-639154bb6b20",
                             UserName = "JohnDoe36"
                         },
                         new
                         {
-                            Id = "91325d43-de93-49d9-8e08-f48e142a446a",
-                            ConcurrencyStamp = "57cc60d9-0342-4d00-a86d-ce119f0c8441",
+                            Id = "e847fbe7-e9bd-4cae-9a1e-9e3c4577c6a6",
+                            ConcurrencyStamp = "98c01e13-c450-4174-ab47-1883ba29de78",
                             Email = "johndoe37@personal.gmail",
                             NormalizedEmail = "JOHNDOE37@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE37",
-                            PasswordHash = "AQAAAAIAAYagAAAAEAUvzkWMmB5JlDxtr1KE6OvGwd0rcpHP5e2zaaOl+XgIm6gZR4VEgg09og048f7Evw==",
-                            SecurityStamp = "1e028e21-47fb-47a5-b03d-005dae0bc57b",
+                            PasswordHash = "AQAAAAIAAYagAAAAEI1iV+PbdTFKGKmJNx7A5RxgVq7rxN52KCN3CY6C7ZjgwsbZjkden6yjAMrXOmrSOg==",
+                            SecurityStamp = "830e55a5-18ec-4a6d-a93e-f2032b591e98",
                             UserName = "JohnDoe37"
                         },
                         new
                         {
-                            Id = "4bcc0e46-09c7-451d-b3d6-2f7d93ac12ae",
-                            ConcurrencyStamp = "bae5881f-13d3-4a5c-bc79-1e0b82a688d2",
+                            Id = "1fb73c13-9a3a-4ee8-ac12-3c45a235f491",
+                            ConcurrencyStamp = "b5cd75c2-b81c-4a8d-9c72-f0edb4ef0114",
                             Email = "johndoe38@personal.gmail",
                             NormalizedEmail = "JOHNDOE38@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE38",
-                            PasswordHash = "AQAAAAIAAYagAAAAEKlLf7lry//fhPUecbUEHE9uoxvnoFsoJawPgX25Rf06qtGq+UJkBiiF64mgn7DJBA==",
-                            SecurityStamp = "45699bd1-67f9-4506-8423-855956d49bbf",
+                            PasswordHash = "AQAAAAIAAYagAAAAEC5ys070NIM+D2B7Hi2XuPVKHPtN7PrcBh/XV+4F4M4d0hpv1621j+XOi8vjt1QTOg==",
+                            SecurityStamp = "f3d91211-95bd-4206-b083-890d5bc551e6",
                             UserName = "JohnDoe38"
                         },
                         new
                         {
-                            Id = "d31ab548-c3ee-489e-b6f4-6794a39beefc",
-                            ConcurrencyStamp = "d2a596c1-044d-45c4-ba72-0a848787f2c1",
+                            Id = "955f6510-121c-4da4-b3cc-be5a76ef0136",
+                            ConcurrencyStamp = "b3b79e8f-2469-45bf-97b3-fd823269c9b8",
                             Email = "johndoe39@personal.gmail",
                             NormalizedEmail = "JOHNDOE39@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE39",
-                            PasswordHash = "AQAAAAIAAYagAAAAEJ0XplvoRqq0ZYbvoxvnHHZXJoOTrXGVIpEJ4bl67d6vvhzsby53ti98Pg7jqUFcfA==",
-                            SecurityStamp = "25545d29-eeec-4a72-9a53-390d65a0b78b",
+                            PasswordHash = "AQAAAAIAAYagAAAAEJEWWsXWgy7j7DJ/jqfgSrmLlbSSo3goOEbJmJt3XKuyKAP5JaDrrnP4s1EbGgoMNg==",
+                            SecurityStamp = "539c706f-5c24-46ff-aae1-8eb3ac03f1cd",
                             UserName = "JohnDoe39"
                         },
                         new
                         {
-                            Id = "6d83b64c-4eea-4f37-83a9-7353d0e957d6",
-                            ConcurrencyStamp = "3e740169-c4d5-41bb-9d37-51b5f7592e58",
+                            Id = "843ccd29-f525-43cf-a621-94c32a04e3e2",
+                            ConcurrencyStamp = "13ae5aeb-0202-4450-bc17-2da338e70712",
                             Email = "johndoe40@personal.gmail",
                             NormalizedEmail = "JOHNDOE40@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE40",
-                            PasswordHash = "AQAAAAIAAYagAAAAEKzOYiwM01FMXyR8Cc4T5D50tf2iRwe2ofdV6RxaTHyEQNJYc5Bxx+b9W7flGfvx1A==",
-                            SecurityStamp = "1cc15fb5-64e6-445e-94c0-a73df9420fde",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPRwdg/EnCW3jeVCzubfZeHipTStV9arcuydEX0t+dMmQJTrcJ2MpLoVL0SApByhMA==",
+                            SecurityStamp = "ef76bc2f-a619-4412-8a9e-104177801f80",
                             UserName = "JohnDoe40"
                         },
                         new
                         {
-                            Id = "18eaacb8-e4be-4869-9551-7208c70b7824",
-                            ConcurrencyStamp = "f374fccd-4571-4816-9018-d096ef16f917",
+                            Id = "2ade2183-5269-451d-9f68-1450770ee6e0",
+                            ConcurrencyStamp = "78bf7962-7715-43d6-98ed-54f22b85be8a",
                             Email = "johndoe41@personal.gmail",
                             NormalizedEmail = "JOHNDOE41@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE41",
-                            PasswordHash = "AQAAAAIAAYagAAAAEADkisikfQ9I+AwbI3j7qCGpEYPzYQxAU3qIPybKUxA9SZsEyPnOyGQFnA3qE4zC8g==",
-                            SecurityStamp = "3be5c49b-1267-4d4d-8449-137661a4a626",
+                            PasswordHash = "AQAAAAIAAYagAAAAEKUO3AprbmokGsJ/Ik1a1ETbiDUc6lSjgIvPI98/vkid4SG3oRoW9pxnctw2PC0Bxg==",
+                            SecurityStamp = "cbdd5342-1874-4bdc-ad12-f60cd1c6acba",
                             UserName = "JohnDoe41"
                         },
                         new
                         {
-                            Id = "9d094fdf-c338-4301-ace7-91d4ca9f7ad0",
-                            ConcurrencyStamp = "be106c1c-fbcf-4b13-a774-1616790adeaa",
+                            Id = "dee346c3-0e66-4762-b2f4-4c6cbb72f53f",
+                            ConcurrencyStamp = "a8057408-a49b-4dcf-94f4-5c1f9fc8a082",
                             Email = "johndoe42@personal.gmail",
                             NormalizedEmail = "JOHNDOE42@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE42",
-                            PasswordHash = "AQAAAAIAAYagAAAAECtBw51baECmAea/E5xaZbv+tHHACpQ2apdd5Yqu4BVIkBLw5sskFx4IE81ao7EZ7w==",
-                            SecurityStamp = "eb72054a-1582-42d6-8591-fe50f8029fd7",
+                            PasswordHash = "AQAAAAIAAYagAAAAEP/4W240XUL1lN1QhiLPp02B6hnmBxxbsy1kQrl0qGLHuodyqfoD3QJSa70vY6GczQ==",
+                            SecurityStamp = "ae0561d9-668f-4a6a-97f3-1365d7a8b495",
                             UserName = "JohnDoe42"
                         },
                         new
                         {
-                            Id = "c5c8a4a8-5e08-4cb9-a1a8-edc657f42719",
-                            ConcurrencyStamp = "d0055d20-129b-4557-84c8-e16cd12a67bc",
+                            Id = "885218c8-80f6-4906-8357-e231f6f5272f",
+                            ConcurrencyStamp = "b679a567-ef50-4c3a-b119-85c37a63802e",
                             Email = "johndoe43@personal.gmail",
                             NormalizedEmail = "JOHNDOE43@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE43",
-                            PasswordHash = "AQAAAAIAAYagAAAAEMKWIGTWzFqp4MClp7dOQZ7WAbSonzL28A5FKH+DyAzKmIq1CrGPq2hbFHg/5Cb/zQ==",
-                            SecurityStamp = "c8466d17-bc44-4e3a-9280-f3c4f2fa3bd5",
+                            PasswordHash = "AQAAAAIAAYagAAAAEC13RTjxzvFEf/4giNKwbIfhM/Li90uXtUe7kvmx9DLolo6kcrb4/gMZuSl+cnXMnA==",
+                            SecurityStamp = "56f7174d-ef8a-4d18-8b11-966aadc78843",
                             UserName = "JohnDoe43"
                         },
                         new
                         {
-                            Id = "729717c6-1ddc-4c09-8117-a254c2d5c263",
-                            ConcurrencyStamp = "f9522e3c-0be2-4ff7-85c1-fbc317e992a6",
+                            Id = "71b4e51e-f700-4c24-a9cc-65235cca927b",
+                            ConcurrencyStamp = "638d0407-0b3c-48dc-af5a-45c3e4abbf0b",
                             Email = "johndoe44@personal.gmail",
                             NormalizedEmail = "JOHNDOE44@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE44",
-                            PasswordHash = "AQAAAAIAAYagAAAAEKnrZ3TJ1xjvjKxHfzDUyD1Tdhv4/IJcuCMOWmxkd5QL/FNNsIUTur9u08tIYvNuuQ==",
-                            SecurityStamp = "a77d9619-9e69-416d-81fb-5be2057a3842",
+                            PasswordHash = "AQAAAAIAAYagAAAAECejzd7X1Wt0bkbC0O1sH3hEM0G4hJ6kmZt0kxucT5488Fe4aFtINu0qGZdC+gAEjQ==",
+                            SecurityStamp = "ae927f7a-f973-4899-8cda-b3dd3cddef9d",
                             UserName = "JohnDoe44"
                         },
                         new
                         {
-                            Id = "a416fab3-37c5-4771-8e73-e37363d4dc2f",
-                            ConcurrencyStamp = "d7c0f3c9-f62d-483e-92e6-b157a5d9dc7f",
+                            Id = "d1348522-6107-4ed5-824b-f30a3709aa04",
+                            ConcurrencyStamp = "32ff7d09-170b-44fe-a888-fe68b6776926",
                             Email = "johndoe45@personal.gmail",
                             NormalizedEmail = "JOHNDOE45@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE45",
-                            PasswordHash = "AQAAAAIAAYagAAAAEPEjeXsXap0azG+s1hAE7/SeJm4cNUbt/+A48ZIjMtK1hIoGceD96/msvogec8EGhg==",
-                            SecurityStamp = "d7c1bb44-aba0-458b-b89a-cd678e0c9bcd",
+                            PasswordHash = "AQAAAAIAAYagAAAAEP2B3UJKmC35f5QLTwAme4K5otfJx4YktCZJ2x6TmU7THx7TE5qKwt5RRFq/BXug9w==",
+                            SecurityStamp = "166ff630-2c71-438d-999d-691f11591f89",
                             UserName = "JohnDoe45"
                         },
                         new
                         {
-                            Id = "10d13800-c4cb-4125-a9de-2baf160b09fc",
-                            ConcurrencyStamp = "d5ad9c5c-78c7-42ff-8e90-a20b558122fd",
+                            Id = "e0a31994-45f5-4924-949b-4288b7a87f8d",
+                            ConcurrencyStamp = "4d968c34-4750-45d5-bbe2-edc9c8d14e19",
                             Email = "johndoe46@personal.gmail",
                             NormalizedEmail = "JOHNDOE46@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE46",
-                            PasswordHash = "AQAAAAIAAYagAAAAEJ61ujdWk/nLuQ+6I22LoV1tlTp+wWymOSksGJGiYmP88qdysFQxQHIKoSXIT9a2Ng==",
-                            SecurityStamp = "eb4f1015-40bf-46d7-b200-e8f8ede0ec29",
+                            PasswordHash = "AQAAAAIAAYagAAAAEBwxY+714enMI8Ru6EyWvVrGtHlgJ0MMNJ6ZVJINuhNDBD4FEQb5zNOkiEjs3Kn3WA==",
+                            SecurityStamp = "e8570cc1-e449-4829-b59b-77b278e5cb4f",
                             UserName = "JohnDoe46"
                         },
                         new
                         {
-                            Id = "df694b56-2105-48bb-a29d-977166995cd4",
-                            ConcurrencyStamp = "f53f0d32-61ab-4b8e-a288-8015a5575aec",
+                            Id = "b5bae1b5-4e8f-4fb4-a018-0fe283a46e59",
+                            ConcurrencyStamp = "2b6d8b93-11b1-4cca-b65d-b1ed31f443b6",
                             Email = "johndoe47@personal.gmail",
                             NormalizedEmail = "JOHNDOE47@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE47",
-                            PasswordHash = "AQAAAAIAAYagAAAAENBFfRB8T4zhBmNG4GkxrWiYrw7d2Zw8ooT/0Wi8zW2BMI05mh7WtHxNm4VioJPAYg==",
-                            SecurityStamp = "e465e6b1-5ed6-4802-b7a1-844c9f3a4a85",
+                            PasswordHash = "AQAAAAIAAYagAAAAEMZhEV8okkJRuq4gybGDhF/i1nkP05scPKgQ520zAv1yO47fnvXwFuAXNcTIv3L5gg==",
+                            SecurityStamp = "ce3679d5-cf2e-4d3c-abaa-4866f3e0de83",
                             UserName = "JohnDoe47"
                         },
                         new
                         {
-                            Id = "10f6c8e2-b8ee-489b-a654-b3c96faec0e7",
-                            ConcurrencyStamp = "c383ca9c-af76-4f7e-b266-85acda8e1b07",
+                            Id = "bb0e0279-3a6c-4dab-86f6-f3d90cb2b3e4",
+                            ConcurrencyStamp = "32962d5a-3a3e-46c9-90e4-ac8c9aadd1c4",
                             Email = "johndoe48@personal.gmail",
                             NormalizedEmail = "JOHNDOE48@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE48",
-                            PasswordHash = "AQAAAAIAAYagAAAAEMrWFAaAOCyKbaywVYuzo579ipTPwd+HgWVlevffZ2SoutFXedFDELTQXloq+MCkLQ==",
-                            SecurityStamp = "9866083b-5e07-4d4a-8b0d-596a050e1599",
+                            PasswordHash = "AQAAAAIAAYagAAAAEFfghMXhEHnh+YmWFBcstiQcn6C7MdFwHluo7l5n5zF/LA/qyyzpNj9q/jeP7ED+nw==",
+                            SecurityStamp = "fe094606-04d9-46cf-a8b5-cbf0c25ca0d9",
                             UserName = "JohnDoe48"
                         },
                         new
                         {
-                            Id = "b6ed985c-13ed-4916-8d38-b5a45cb6665c",
-                            ConcurrencyStamp = "21184f8c-7125-44cd-88ac-c01d8058f3d7",
+                            Id = "97007bfd-66be-4585-9de1-3201e8ed912b",
+                            ConcurrencyStamp = "64847704-cea1-478b-ad0f-28e86c988205",
                             Email = "johndoe49@personal.gmail",
                             NormalizedEmail = "JOHNDOE49@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE49",
-                            PasswordHash = "AQAAAAIAAYagAAAAEKqy4/Hgg1Ga+a3j8qHpGdiQl0p4ZiWypOvQjzad/LPqbGBC02BRahy5ztH7ZxCX2w==",
-                            SecurityStamp = "71dd4c45-6bbf-489f-93d9-a4e3b885ef2a",
+                            PasswordHash = "AQAAAAIAAYagAAAAEDihdeP/MFSDyxBGAWqvQK4fdVbDAWZq0TOY21X6jC3S0SydJu1koD2XS+8Lp3Ggmw==",
+                            SecurityStamp = "3821dd79-2579-42ca-8a69-0ef8549ad20a",
                             UserName = "JohnDoe49"
                         },
                         new
                         {
-                            Id = "7b6b47ee-1bf8-4aae-90fc-4c1e268a1371",
-                            ConcurrencyStamp = "fa91a275-5b13-47fc-bc2a-6be25d924808",
+                            Id = "9fa4fd2a-2fe1-4e35-9060-0bb66c8d6c01",
+                            ConcurrencyStamp = "fe8ef65f-2af7-44ce-90f6-a144b0f31894",
                             Email = "johndoe50@personal.gmail",
                             NormalizedEmail = "JOHNDOE50@PERSONAL.GMAIL",
                             NormalizedUserName = "JOHNDOE50",
-                            PasswordHash = "AQAAAAIAAYagAAAAEP/tL4dXIMmNOajNBvtuWQ/ReDJeswfOvQigIPuL8mRdSwWnuQEC1Ugp9xyGyInzOg==",
-                            SecurityStamp = "63560f12-add6-4e9d-ab89-c4f67690e319",
+                            PasswordHash = "AQAAAAIAAYagAAAAEFFOuGSumBdWUpYT/+VS1QnCl2/d9YlZ09ZjonpUG1CUJwvuhzUUCnyiXFOMmphBWA==",
+                            SecurityStamp = "6fea90f9-5832-4266-8003-79a391d2bb32",
                             UserName = "JohnDoe50"
                         });
                 });
@@ -726,183 +726,183 @@ namespace HumanCapitalManagement.Migrations
                         {
                             Id = 1,
                             CompanyEmail = "johndoe1@company.gmail",
-                            Country = "USA",
+                            Country = "France",
                             DepartmentId = 2,
-                            EncryptedIBAN = "VVM5N0JPRkE5ODc2NTQzMjEw",
+                            EncryptedIBAN = "RlI2NDMwMDA2MTIzNDU2Nzg5MDE4OQ==",
                             FirstName = "John",
                             JobTitle = "Finance Manager",
                             LastName = "Doe",
-                            Salary = 3036.0m,
-                            UserId = "2a561aab-d12b-4391-9132-f7da67125396"
+                            Salary = 3012.0m,
+                            UserId = "807ffea6-a378-4b09-90c3-cbc53690a228"
                         },
                         new
                         {
                             Id = 2,
                             CompanyEmail = "johndoe2@company.gmail",
-                            Country = "Bulgaria",
+                            Country = "France",
                             DepartmentId = 3,
-                            EncryptedIBAN = "Qkc2MlVOQ1IxMjM0NTY3ODkw",
+                            EncryptedIBAN = "RlI1MTMwMDA2MTIzNDU2Nzg5MDE4OQ==",
                             FirstName = "John",
                             JobTitle = "IT Manager",
                             LastName = "Doe",
-                            Salary = 6015.0m,
-                            UserId = "d2e4957d-cef0-4062-a6c9-3f588f13f58f"
+                            Salary = 7389.0m,
+                            UserId = "e1569033-d81c-467c-b249-e8bb3e16100e"
                         },
                         new
                         {
                             Id = 3,
                             CompanyEmail = "johndoe3@company.gmail",
-                            Country = "Bulgaria",
+                            Country = "Britain",
                             DepartmentId = 4,
-                            EncryptedIBAN = "QkcxMFVOQ1IxMjM0NTY3ODkw",
+                            EncryptedIBAN = "R0IxNk5XQks2MDE2MTMzMTkyNjgxOQ==",
                             FirstName = "John",
                             JobTitle = "Marketing Manager",
                             LastName = "Doe",
-                            Salary = 3144.0m,
-                            UserId = "6951b2ae-f6f4-4da5-9136-b25004c28f9c"
+                            Salary = 3055.5m,
+                            UserId = "f0a80dde-96fe-4611-9bee-44ca68cfba4c"
                         },
                         new
                         {
                             Id = 4,
                             CompanyEmail = "johndoe4@company.gmail",
-                            Country = "USA",
+                            Country = "Britain",
                             DepartmentId = 5,
-                            EncryptedIBAN = "VVMyMUJPRkE5ODc2NTQzMjEw",
+                            EncryptedIBAN = "R0IxMU5XQks2MDE2MTMzMTkyNjgxOQ==",
                             FirstName = "John",
                             JobTitle = "Sales Manager",
                             LastName = "Doe",
-                            Salary = 3022.5m,
-                            UserId = "0b2c6feb-b642-49f8-84ef-680d3ff2c344"
+                            Salary = 5010.0m,
+                            UserId = "231bbd41-d41b-408a-82af-7f9c09aedadd"
                         },
                         new
                         {
                             Id = 5,
                             CompanyEmail = "johndoe5@company.gmail",
-                            Country = "Germany",
+                            Country = "Bulgaria",
                             DepartmentId = 6,
-                            EncryptedIBAN = "REUzOTM3MDQwMDQ0MDUzMjAxMzAwMA==",
+                            EncryptedIBAN = "Qkc2OVVOQ1IxMjM0NTY3ODkw",
                             FirstName = "John",
                             JobTitle = "Operations Manager",
                             LastName = "Doe",
-                            Salary = 4309.5m,
-                            UserId = "726d58c1-73fa-43fb-b3fb-48ec29b2ac5c"
+                            Salary = 4198.5m,
+                            UserId = "7827929f-837c-4c79-9aa6-6a025f9309c8"
                         },
                         new
                         {
                             Id = 6,
                             CompanyEmail = "johndoe6@company.gmail",
-                            Country = "UK",
+                            Country = "Bulgaria",
                             DepartmentId = 1,
-                            EncryptedIBAN = "R0I3NU5XQks2MDE2MTMzMTkyNjgxOQ==",
+                            EncryptedIBAN = "Qkc0M1VOQ1IxMjM0NTY3ODkw",
                             FirstName = "John",
                             JobTitle = "HR Manager",
                             LastName = "Doe",
-                            Salary = 2610.0m,
-                            UserId = "f7afdc1e-c904-44e2-9224-43e4aecbc673"
+                            Salary = 2308.5m,
+                            UserId = "385e6370-3ae5-465e-bd9d-d13902f11c83"
                         },
                         new
                         {
                             Id = 7,
                             CompanyEmail = "johndoe7@company.gmail",
-                            Country = "UK",
+                            Country = "France",
                             DepartmentId = 2,
-                            EncryptedIBAN = "R0IxMk5XQks2MDE2MTMzMTkyNjgxOQ==",
+                            EncryptedIBAN = "RlI2NzMwMDA2MTIzNDU2Nzg5MDE4OQ==",
                             FirstName = "John",
-                            JobTitle = "Financial Analyst",
+                            JobTitle = "Auditor",
                             LastName = "Doe",
-                            Salary = 2149m,
-                            UserId = "e2a94c68-334a-4305-b96b-46693e124d1b"
+                            Salary = 2096m,
+                            UserId = "38292939-4e0e-4d33-b8c9-aa99b6c033be"
                         },
                         new
                         {
                             Id = 8,
                             CompanyEmail = "johndoe8@company.gmail",
-                            Country = "UK",
+                            Country = "Bulgaria",
                             DepartmentId = 3,
-                            EncryptedIBAN = "R0I0Nk5XQks2MDE2MTMzMTkyNjgxOQ==",
+                            EncryptedIBAN = "Qkc3OVVOQ1IxMjM0NTY3ODkw",
                             FirstName = "John",
-                            JobTitle = "Database Admin",
+                            JobTitle = "System Admin",
                             LastName = "Doe",
-                            Salary = 4918m,
-                            UserId = "8e0bcaef-52af-4021-b2f3-1f2770d38d52"
+                            Salary = 4674m,
+                            UserId = "6a21b06b-55ea-42b4-a104-90089134e536"
                         },
                         new
                         {
                             Id = 9,
                             CompanyEmail = "johndoe9@company.gmail",
-                            Country = "France",
+                            Country = "Britain",
                             DepartmentId = 4,
-                            EncryptedIBAN = "RlI4OTMwMDA2MTIzNDU2Nzg5MDE4OQ==",
+                            EncryptedIBAN = "R0I3M05XQks2MDE2MTMzMTkyNjgxOQ==",
                             FirstName = "John",
-                            JobTitle = "SEO Analyst",
+                            JobTitle = "Marketing Specialist",
                             LastName = "Doe",
-                            Salary = 2095m,
-                            UserId = "c5c20525-4a8f-4a6f-bd5f-70cafc974b97"
+                            Salary = 2109m,
+                            UserId = "7c7d1d58-5431-4628-95a4-65b25a10f771"
                         },
                         new
                         {
                             Id = 10,
                             CompanyEmail = "johndoe10@company.gmail",
-                            Country = "Bulgaria",
+                            Country = "Britain",
                             DepartmentId = 5,
-                            EncryptedIBAN = "Qkc3NlVOQ1IxMjM0NTY3ODkw",
+                            EncryptedIBAN = "R0I2Nk5XQks2MDE2MTMzMTkyNjgxOQ==",
                             FirstName = "John",
                             JobTitle = "Business Developer",
                             LastName = "Doe",
-                            Salary = 3292m,
-                            UserId = "7da74fd5-160f-4cd6-91b2-8628f4f47a83"
+                            Salary = 2320m,
+                            UserId = "4849c0a0-5253-46dc-b38c-a80744f6a224"
                         },
                         new
                         {
                             Id = 11,
                             CompanyEmail = "johndoe11@company.gmail",
-                            Country = "Germany",
+                            Country = "USA",
                             DepartmentId = 6,
-                            EncryptedIBAN = "REUzMzM3MDQwMDQ0MDUzMjAxMzAwMA==",
+                            EncryptedIBAN = "VVMzOEJPRkE5ODc2NTQzMjEw",
                             FirstName = "John",
-                            JobTitle = "Logistics Coordinator",
+                            JobTitle = "Supply Chain Analyst",
                             LastName = "Doe",
-                            Salary = 2911m,
-                            UserId = "4eaa9c9e-8590-4534-960b-4c72ec5de01b"
+                            Salary = 2876m,
+                            UserId = "711d97ad-25c9-40b8-b079-fc9e8ef748a2"
                         },
                         new
                         {
                             Id = 12,
                             CompanyEmail = "johndoe12@company.gmail",
-                            Country = "Bulgaria",
+                            Country = "Britain",
                             DepartmentId = 1,
-                            EncryptedIBAN = "Qkc2NFVOQ1IxMjM0NTY3ODkw",
+                            EncryptedIBAN = "R0I2N05XQks2MDE2MTMzMTkyNjgxOQ==",
                             FirstName = "John",
-                            JobTitle = "Recruiter",
+                            JobTitle = "Training Specialist",
                             LastName = "Doe",
-                            Salary = 1507m,
-                            UserId = "7dd20390-ce34-4e8a-9989-7861830cb12d"
+                            Salary = 1702m,
+                            UserId = "889d02b1-8a37-43f5-94b8-feb07a4489bc"
                         },
                         new
                         {
                             Id = 13,
                             CompanyEmail = "johndoe13@company.gmail",
-                            Country = "France",
+                            Country = "Britain",
                             DepartmentId = 2,
-                            EncryptedIBAN = "RlIzNjMwMDA2MTIzNDU2Nzg5MDE4OQ==",
+                            EncryptedIBAN = "R0I5NE5XQks2MDE2MTMzMTkyNjgxOQ==",
                             FirstName = "John",
-                            JobTitle = "Financial Analyst",
+                            JobTitle = "Auditor",
                             LastName = "Doe",
-                            Salary = 2107m,
-                            UserId = "5b2bc7e2-8f2c-43c5-9027-99b354272660"
+                            Salary = 2045m,
+                            UserId = "8177d6ef-90c9-4690-b3e8-bc5971204277"
                         },
                         new
                         {
                             Id = 14,
                             CompanyEmail = "johndoe14@company.gmail",
-                            Country = "Bulgaria",
+                            Country = "USA",
                             DepartmentId = 3,
-                            EncryptedIBAN = "Qkc2NVVOQ1IxMjM0NTY3ODkw",
+                            EncryptedIBAN = "VVM5MEJPRkE5ODc2NTQzMjEw",
                             FirstName = "John",
-                            JobTitle = "Database Admin",
+                            JobTitle = "Network Engineer",
                             LastName = "Doe",
-                            Salary = 4544m,
-                            UserId = "6096bf5f-c034-4c83-91d5-f911cbe361ea"
+                            Salary = 4807m,
+                            UserId = "2d4eb86b-684f-45e4-b4d7-c9716449878b"
                         },
                         new
                         {
@@ -910,38 +910,38 @@ namespace HumanCapitalManagement.Migrations
                             CompanyEmail = "johndoe15@company.gmail",
                             Country = "USA",
                             DepartmentId = 4,
-                            EncryptedIBAN = "VVM1MUJPRkE5ODc2NTQzMjEw",
+                            EncryptedIBAN = "VVM2MEJPRkE5ODc2NTQzMjEw",
                             FirstName = "John",
-                            JobTitle = "Content Writer",
+                            JobTitle = "SEO Analyst",
                             LastName = "Doe",
-                            Salary = 2083m,
-                            UserId = "52404cf1-e1de-4159-a6c7-206d7eb1782a"
+                            Salary = 2095m,
+                            UserId = "15620d8e-12da-41a7-80ee-6671ad4a0433"
                         },
                         new
                         {
                             Id = 16,
                             CompanyEmail = "johndoe16@company.gmail",
-                            Country = "USA",
+                            Country = "Germany",
                             DepartmentId = 5,
-                            EncryptedIBAN = "VVM1NUJPRkE5ODc2NTQzMjEw",
+                            EncryptedIBAN = "REU5NTM3MDQwMDQ0MDUzMjAxMzAwMA==",
                             FirstName = "John",
-                            JobTitle = "Account Executive",
+                            JobTitle = "Sales Engineer",
                             LastName = "Doe",
-                            Salary = 2213m,
-                            UserId = "06ab1e2f-9194-447b-9847-70297d410585"
+                            Salary = 2396m,
+                            UserId = "fe76c706-6f52-49c4-820f-6d378710df2f"
                         },
                         new
                         {
                             Id = 17,
                             CompanyEmail = "johndoe17@company.gmail",
-                            Country = "Germany",
+                            Country = "France",
                             DepartmentId = 6,
-                            EncryptedIBAN = "REU1NzM3MDQwMDQ0MDUzMjAxMzAwMA==",
+                            EncryptedIBAN = "RlI4MTMwMDA2MTIzNDU2Nzg5MDE4OQ==",
                             FirstName = "John",
-                            JobTitle = "Operations Specialist",
+                            JobTitle = "Supply Chain Analyst",
                             LastName = "Doe",
-                            Salary = 2711m,
-                            UserId = "d16589d3-e5e3-4c10-a858-c37d115d10ba"
+                            Salary = 2546m,
+                            UserId = "eff03be9-2eda-4304-948c-55fc3d65a457"
                         },
                         new
                         {
@@ -949,272 +949,272 @@ namespace HumanCapitalManagement.Migrations
                             CompanyEmail = "johndoe18@company.gmail",
                             Country = "Germany",
                             DepartmentId = 1,
-                            EncryptedIBAN = "REU0NTM3MDQwMDQ0MDUzMjAxMzAwMA==",
+                            EncryptedIBAN = "REU1MTM3MDQwMDQ0MDUzMjAxMzAwMA==",
                             FirstName = "John",
-                            JobTitle = "Recruiter",
+                            JobTitle = "Training Specialist",
                             LastName = "Doe",
-                            Salary = 1770m,
-                            UserId = "5328b4b2-c307-4932-8547-57857a70b30c"
+                            Salary = 1708m,
+                            UserId = "543d1a57-fd27-4089-8f92-83016b397cde"
                         },
                         new
                         {
                             Id = 19,
                             CompanyEmail = "johndoe19@company.gmail",
-                            Country = "Germany",
+                            Country = "Britain",
                             DepartmentId = 2,
-                            EncryptedIBAN = "REU4MTM3MDQwMDQ0MDUzMjAxMzAwMA==",
+                            EncryptedIBAN = "R0I4Nk5XQks2MDE2MTMzMTkyNjgxOQ==",
                             FirstName = "John",
-                            JobTitle = "Tax Specialist",
+                            JobTitle = "Auditor",
                             LastName = "Doe",
-                            Salary = 2159m,
-                            UserId = "4b00f983-a2b3-4366-955b-85d1fa2ae6fb"
+                            Salary = 2156m,
+                            UserId = "3bfd2e43-16ea-4d3e-a8cf-cc83bd9169cd"
                         },
                         new
                         {
                             Id = 20,
                             CompanyEmail = "johndoe20@company.gmail",
-                            Country = "UK",
+                            Country = "France",
                             DepartmentId = 3,
-                            EncryptedIBAN = "R0IxOU5XQks2MDE2MTMzMTkyNjgxOQ==",
+                            EncryptedIBAN = "RlI0ODMwMDA2MTIzNDU2Nzg5MDE4OQ==",
                             FirstName = "John",
-                            JobTitle = "Software Developer",
+                            JobTitle = "Database Admin",
                             LastName = "Doe",
-                            Salary = 4848m,
-                            UserId = "bbfed021-45ee-40a5-97b8-a2ac21c6d198"
+                            Salary = 4925m,
+                            UserId = "e5d87954-c9ce-496b-a84f-79dd729ea29e"
                         },
                         new
                         {
                             Id = 21,
                             CompanyEmail = "johndoe21@company.gmail",
-                            Country = "Bulgaria",
+                            Country = "USA",
                             DepartmentId = 4,
-                            EncryptedIBAN = "QkcyMVVOQ1IxMjM0NTY3ODkw",
+                            EncryptedIBAN = "VVM4MUJPRkE5ODc2NTQzMjEw",
                             FirstName = "John",
                             JobTitle = "SEO Analyst",
                             LastName = "Doe",
-                            Salary = 2018m,
-                            UserId = "ab4fa6d6-d7b7-42da-a023-7b1a8e3d0b91"
+                            Salary = 2066m,
+                            UserId = "8ccba1c0-b8b3-4d13-abf7-ffaa356f9c28"
                         },
                         new
                         {
                             Id = 22,
                             CompanyEmail = "johndoe22@company.gmail",
-                            Country = "UK",
+                            Country = "France",
                             DepartmentId = 5,
-                            EncryptedIBAN = "R0IzMk5XQks2MDE2MTMzMTkyNjgxOQ==",
+                            EncryptedIBAN = "RlI4NDMwMDA2MTIzNDU2Nzg5MDE4OQ==",
                             FirstName = "John",
-                            JobTitle = "Sales Engineer",
+                            JobTitle = "Business Developer",
                             LastName = "Doe",
-                            Salary = 2859m,
-                            UserId = "1023b4e0-446e-460b-8f95-aa88c57c26df"
+                            Salary = 3746m,
+                            UserId = "5784b99e-69e3-4f8d-9217-c3cd1b4f4145"
                         },
                         new
                         {
                             Id = 23,
                             CompanyEmail = "johndoe23@company.gmail",
-                            Country = "Germany",
+                            Country = "Britain",
                             DepartmentId = 6,
-                            EncryptedIBAN = "REU0NjM3MDQwMDQ0MDUzMjAxMzAwMA==",
+                            EncryptedIBAN = "R0I5OE5XQks2MDE2MTMzMTkyNjgxOQ==",
                             FirstName = "John",
-                            JobTitle = "Operations Specialist",
+                            JobTitle = "Logistics Coordinator",
                             LastName = "Doe",
-                            Salary = 2622m,
-                            UserId = "e871640c-a4bd-4299-b669-def9e01d4e67"
+                            Salary = 2604m,
+                            UserId = "0573bbba-a926-4845-a28d-b59dbee8e7a9"
                         },
                         new
                         {
                             Id = 24,
                             CompanyEmail = "johndoe24@company.gmail",
-                            Country = "Bulgaria",
+                            Country = "France",
                             DepartmentId = 1,
-                            EncryptedIBAN = "Qkc4OVVOQ1IxMjM0NTY3ODkw",
+                            EncryptedIBAN = "RlI4OTMwMDA2MTIzNDU2Nzg5MDE4OQ==",
                             FirstName = "John",
-                            JobTitle = "Training Specialist",
+                            JobTitle = "Recruiter",
                             LastName = "Doe",
-                            Salary = 1646m,
-                            UserId = "bd265674-3975-4d45-b2f4-dab47fe760f9"
+                            Salary = 1678m,
+                            UserId = "48a9ec2b-37c5-4483-988f-28956c4c8bc7"
                         },
                         new
                         {
                             Id = 25,
                             CompanyEmail = "johndoe25@company.gmail",
-                            Country = "Bulgaria",
+                            Country = "Germany",
                             DepartmentId = 2,
-                            EncryptedIBAN = "Qkc3NFVOQ1IxMjM0NTY3ODkw",
+                            EncryptedIBAN = "REU3OTM3MDQwMDQ0MDUzMjAxMzAwMA==",
                             FirstName = "John",
-                            JobTitle = "Tax Specialist",
+                            JobTitle = "Accountant",
                             LastName = "Doe",
-                            Salary = 2095m,
-                            UserId = "a95df43d-3e6d-4291-989a-3aa48063e1ac"
+                            Salary = 2085m,
+                            UserId = "870fdb1b-aaa0-4df2-828b-c2b51af111e1"
                         },
                         new
                         {
                             Id = 26,
                             CompanyEmail = "johndoe26@company.gmail",
-                            Country = "UK",
+                            Country = "Germany",
                             DepartmentId = 3,
-                            EncryptedIBAN = "R0IzOE5XQks2MDE2MTMzMTkyNjgxOQ==",
+                            EncryptedIBAN = "REU0NjM3MDQwMDQ0MDUzMjAxMzAwMA==",
                             FirstName = "John",
                             JobTitle = "Network Engineer",
                             LastName = "Doe",
-                            Salary = 4348m,
-                            UserId = "f08881d5-7483-4eea-afc7-a1c402226c06"
+                            Salary = 4017m,
+                            UserId = "870bc4c6-8719-4c65-9f1a-605762ec5f5c"
                         },
                         new
                         {
                             Id = 27,
                             CompanyEmail = "johndoe27@company.gmail",
-                            Country = "UK",
+                            Country = "Germany",
                             DepartmentId = 4,
-                            EncryptedIBAN = "R0I0OU5XQks2MDE2MTMzMTkyNjgxOQ==",
+                            EncryptedIBAN = "REUxMzM3MDQwMDQ0MDUzMjAxMzAwMA==",
                             FirstName = "John",
-                            JobTitle = "SEO Analyst",
+                            JobTitle = "Marketing Specialist",
                             LastName = "Doe",
-                            Salary = 2022m,
-                            UserId = "c04d52fb-9fe6-4782-80cc-1867821fce44"
+                            Salary = 2144m,
+                            UserId = "0bc32a8f-fadb-4f16-85f6-acfb652c7762"
                         },
                         new
                         {
                             Id = 28,
                             CompanyEmail = "johndoe28@company.gmail",
-                            Country = "Germany",
+                            Country = "Bulgaria",
                             DepartmentId = 5,
-                            EncryptedIBAN = "REU2MTM3MDQwMDQ0MDUzMjAxMzAwMA==",
+                            EncryptedIBAN = "Qkc3MFVOQ1IxMjM0NTY3ODkw",
                             FirstName = "John",
-                            JobTitle = "Account Executive",
+                            JobTitle = "Sales Representative",
                             LastName = "Doe",
-                            Salary = 2032m,
-                            UserId = "8d51c159-6db7-466f-a48d-9dfecc31c543"
+                            Salary = 4330m,
+                            UserId = "f3f22722-2561-45a8-8602-99d3d7c08c4c"
                         },
                         new
                         {
                             Id = 29,
                             CompanyEmail = "johndoe29@company.gmail",
-                            Country = "France",
+                            Country = "Britain",
                             DepartmentId = 6,
-                            EncryptedIBAN = "RlI2NDMwMDA2MTIzNDU2Nzg5MDE4OQ==",
+                            EncryptedIBAN = "R0I2Mk5XQks2MDE2MTMzMTkyNjgxOQ==",
                             FirstName = "John",
                             JobTitle = "Supply Chain Analyst",
                             LastName = "Doe",
-                            Salary = 2626m,
-                            UserId = "994946ef-8443-4db5-9369-fe1c871577d1"
+                            Salary = 2721m,
+                            UserId = "56ced998-b75f-4d6e-bfd6-a681c2bb1bd9"
                         },
                         new
                         {
                             Id = 30,
                             CompanyEmail = "johndoe30@company.gmail",
-                            Country = "France",
+                            Country = "Germany",
                             DepartmentId = 1,
-                            EncryptedIBAN = "RlIyNDMwMDA2MTIzNDU2Nzg5MDE4OQ==",
+                            EncryptedIBAN = "REU1OTM3MDQwMDQ0MDUzMjAxMzAwMA==",
                             FirstName = "John",
-                            JobTitle = "Compensation Analyst",
+                            JobTitle = "Recruiter",
                             LastName = "Doe",
-                            Salary = 1713m,
-                            UserId = "fc28eb59-dcf7-46bf-81ff-bd16ef7171d8"
+                            Salary = 1542m,
+                            UserId = "f20b371a-4a74-47b5-ac13-82faa4a003df"
                         },
                         new
                         {
                             Id = 31,
                             CompanyEmail = "johndoe31@company.gmail",
-                            Country = "USA",
+                            Country = "Bulgaria",
                             DepartmentId = 2,
-                            EncryptedIBAN = "VVMxNkJPRkE5ODc2NTQzMjEw",
+                            EncryptedIBAN = "QkcxOFVOQ1IxMjM0NTY3ODkw",
                             FirstName = "John",
-                            JobTitle = "Financial Analyst",
+                            JobTitle = "Accountant",
                             LastName = "Doe",
-                            Salary = 2052m,
-                            UserId = "661d2c59-4abf-4f5f-b743-98be0e5644a9"
+                            Salary = 2048m,
+                            UserId = "6dd4a31c-08cb-4049-85fa-0c0d8e774b15"
                         },
                         new
                         {
                             Id = 32,
                             CompanyEmail = "johndoe32@company.gmail",
-                            Country = "Germany",
+                            Country = "Bulgaria",
                             DepartmentId = 3,
-                            EncryptedIBAN = "REUzODM3MDQwMDQ0MDUzMjAxMzAwMA==",
+                            EncryptedIBAN = "Qkc1OVVOQ1IxMjM0NTY3ODkw",
                             FirstName = "John",
-                            JobTitle = "Software Developer",
+                            JobTitle = "Network Engineer",
                             LastName = "Doe",
-                            Salary = 4226m,
-                            UserId = "056a8e45-40e3-4665-ae80-a499e7ed4fd6"
+                            Salary = 4466m,
+                            UserId = "2fb7807a-edaa-4cf2-b413-689279eff9e6"
                         },
                         new
                         {
                             Id = 33,
                             CompanyEmail = "johndoe33@company.gmail",
-                            Country = "UK",
+                            Country = "Germany",
                             DepartmentId = 4,
-                            EncryptedIBAN = "R0I2NU5XQks2MDE2MTMzMTkyNjgxOQ==",
+                            EncryptedIBAN = "REUxNjM3MDQwMDQ0MDUzMjAxMzAwMA==",
                             FirstName = "John",
-                            JobTitle = "SEO Analyst",
+                            JobTitle = "Marketing Specialist",
                             LastName = "Doe",
-                            Salary = 2167m,
-                            UserId = "af77617b-e2b5-4e09-8d9e-85d222d82564"
+                            Salary = 2061m,
+                            UserId = "f54d0684-3e25-4c67-9950-ad6cc073f815"
                         },
                         new
                         {
                             Id = 34,
                             CompanyEmail = "johndoe34@company.gmail",
-                            Country = "UK",
+                            Country = "France",
                             DepartmentId = 5,
-                            EncryptedIBAN = "R0IyN05XQks2MDE2MTMzMTkyNjgxOQ==",
+                            EncryptedIBAN = "RlI4NzMwMDA2MTIzNDU2Nzg5MDE4OQ==",
                             FirstName = "John",
-                            JobTitle = "Account Executive",
+                            JobTitle = "Sales Representative",
                             LastName = "Doe",
-                            Salary = 4965m,
-                            UserId = "702b60fd-a373-4099-8c5a-5f4bbd869668"
+                            Salary = 2633m,
+                            UserId = "7e567655-fbca-47b2-b50d-a090d51b7e6e"
                         },
                         new
                         {
                             Id = 35,
                             CompanyEmail = "johndoe35@company.gmail",
-                            Country = "UK",
+                            Country = "Bulgaria",
                             DepartmentId = 6,
-                            EncryptedIBAN = "R0I5OE5XQks2MDE2MTMzMTkyNjgxOQ==",
+                            EncryptedIBAN = "Qkc5N1VOQ1IxMjM0NTY3ODkw",
                             FirstName = "John",
-                            JobTitle = "Facilities Manager",
+                            JobTitle = "Supply Chain Analyst",
                             LastName = "Doe",
-                            Salary = 2847m,
-                            UserId = "c16dbd99-0405-4ada-9298-1240a2f3c1b1"
+                            Salary = 2624m,
+                            UserId = "66c314f2-e23c-401d-abca-931b1a9172a5"
                         },
                         new
                         {
                             Id = 36,
                             CompanyEmail = "johndoe36@company.gmail",
-                            Country = "Germany",
+                            Country = "Bulgaria",
                             DepartmentId = 1,
-                            EncryptedIBAN = "REU1ODM3MDQwMDQ0MDUzMjAxMzAwMA==",
+                            EncryptedIBAN = "QkczM1VOQ1IxMjM0NTY3ODkw",
                             FirstName = "John",
                             JobTitle = "Recruiter",
                             LastName = "Doe",
-                            Salary = 1536m,
-                            UserId = "e96bcfb5-e8fe-43e3-8cce-7d34630d395d"
+                            Salary = 1742m,
+                            UserId = "3856ea67-c0ec-49f5-8562-b551b9f4b4b5"
                         },
                         new
                         {
                             Id = 37,
                             CompanyEmail = "johndoe37@company.gmail",
-                            Country = "France",
+                            Country = "Bulgaria",
                             DepartmentId = 2,
-                            EncryptedIBAN = "RlI3MDMwMDA2MTIzNDU2Nzg5MDE4OQ==",
+                            EncryptedIBAN = "QkczM1VOQ1IxMjM0NTY3ODkw",
                             FirstName = "John",
-                            JobTitle = "Auditor",
+                            JobTitle = "Accountant",
                             LastName = "Doe",
-                            Salary = 2157m,
-                            UserId = "91325d43-de93-49d9-8e08-f48e142a446a"
+                            Salary = 2011m,
+                            UserId = "e847fbe7-e9bd-4cae-9a1e-9e3c4577c6a6"
                         },
                         new
                         {
                             Id = 38,
                             CompanyEmail = "johndoe38@company.gmail",
-                            Country = "Germany",
+                            Country = "USA",
                             DepartmentId = 3,
-                            EncryptedIBAN = "REU1NTM3MDQwMDQ0MDUzMjAxMzAwMA==",
+                            EncryptedIBAN = "VVM0NUJPRkE5ODc2NTQzMjEw",
                             FirstName = "John",
-                            JobTitle = "System Admin",
+                            JobTitle = "Software Developer",
                             LastName = "Doe",
-                            Salary = 4151m,
-                            UserId = "4bcc0e46-09c7-451d-b3d6-2f7d93ac12ae"
+                            Salary = 4587m,
+                            UserId = "1fb73c13-9a3a-4ee8-ac12-3c45a235f491"
                         },
                         new
                         {
@@ -1222,155 +1222,155 @@ namespace HumanCapitalManagement.Migrations
                             CompanyEmail = "johndoe39@company.gmail",
                             Country = "France",
                             DepartmentId = 4,
-                            EncryptedIBAN = "RlIxMzMwMDA2MTIzNDU2Nzg5MDE4OQ==",
+                            EncryptedIBAN = "RlI5NDMwMDA2MTIzNDU2Nzg5MDE4OQ==",
                             FirstName = "John",
-                            JobTitle = "Content Writer",
+                            JobTitle = "SEO Analyst",
                             LastName = "Doe",
-                            Salary = 2073m,
-                            UserId = "d31ab548-c3ee-489e-b6f4-6794a39beefc"
+                            Salary = 2000m,
+                            UserId = "955f6510-121c-4da4-b3cc-be5a76ef0136"
                         },
                         new
                         {
                             Id = 40,
                             CompanyEmail = "johndoe40@company.gmail",
-                            Country = "UK",
+                            Country = "France",
                             DepartmentId = 5,
-                            EncryptedIBAN = "R0I4Nk5XQks2MDE2MTMzMTkyNjgxOQ==",
+                            EncryptedIBAN = "RlI3NTMwMDA2MTIzNDU2Nzg5MDE4OQ==",
                             FirstName = "John",
-                            JobTitle = "Sales Engineer",
+                            JobTitle = "Sales Representative",
                             LastName = "Doe",
-                            Salary = 3177m,
-                            UserId = "6d83b64c-4eea-4f37-83a9-7353d0e957d6"
+                            Salary = 4956m,
+                            UserId = "843ccd29-f525-43cf-a621-94c32a04e3e2"
                         },
                         new
                         {
                             Id = 41,
                             CompanyEmail = "johndoe41@company.gmail",
-                            Country = "France",
+                            Country = "USA",
                             DepartmentId = 6,
-                            EncryptedIBAN = "RlIyOTMwMDA2MTIzNDU2Nzg5MDE4OQ==",
+                            EncryptedIBAN = "VVM4MkJPRkE5ODc2NTQzMjEw",
                             FirstName = "John",
-                            JobTitle = "Logistics Coordinator",
+                            JobTitle = "Facilities Manager",
                             LastName = "Doe",
-                            Salary = 2688m,
-                            UserId = "18eaacb8-e4be-4869-9551-7208c70b7824"
+                            Salary = 2993m,
+                            UserId = "2ade2183-5269-451d-9f68-1450770ee6e0"
                         },
                         new
                         {
                             Id = 42,
                             CompanyEmail = "johndoe42@company.gmail",
-                            Country = "Germany",
+                            Country = "Bulgaria",
                             DepartmentId = 1,
-                            EncryptedIBAN = "REU4NjM3MDQwMDQ0MDUzMjAxMzAwMA==",
+                            EncryptedIBAN = "Qkc2NlVOQ1IxMjM0NTY3ODkw",
                             FirstName = "John",
-                            JobTitle = "HR Generalist",
+                            JobTitle = "Training Specialist",
                             LastName = "Doe",
-                            Salary = 1723m,
-                            UserId = "9d094fdf-c338-4301-ace7-91d4ca9f7ad0"
+                            Salary = 1715m,
+                            UserId = "dee346c3-0e66-4762-b2f4-4c6cbb72f53f"
                         },
                         new
                         {
                             Id = 43,
                             CompanyEmail = "johndoe43@company.gmail",
-                            Country = "France",
+                            Country = "Britain",
                             DepartmentId = 2,
-                            EncryptedIBAN = "RlI4MDMwMDA2MTIzNDU2Nzg5MDE4OQ==",
+                            EncryptedIBAN = "R0I0N05XQks2MDE2MTMzMTkyNjgxOQ==",
                             FirstName = "John",
-                            JobTitle = "Accountant",
+                            JobTitle = "Auditor",
                             LastName = "Doe",
-                            Salary = 2192m,
-                            UserId = "c5c8a4a8-5e08-4cb9-a1a8-edc657f42719"
+                            Salary = 2198m,
+                            UserId = "885218c8-80f6-4906-8357-e231f6f5272f"
                         },
                         new
                         {
                             Id = 44,
                             CompanyEmail = "johndoe44@company.gmail",
-                            Country = "UK",
+                            Country = "Britain",
                             DepartmentId = 3,
-                            EncryptedIBAN = "R0I1OE5XQks2MDE2MTMzMTkyNjgxOQ==",
+                            EncryptedIBAN = "R0I0OE5XQks2MDE2MTMzMTkyNjgxOQ==",
                             FirstName = "John",
-                            JobTitle = "Database Admin",
+                            JobTitle = "Network Engineer",
                             LastName = "Doe",
-                            Salary = 4668m,
-                            UserId = "729717c6-1ddc-4c09-8117-a254c2d5c263"
+                            Salary = 4953m,
+                            UserId = "71b4e51e-f700-4c24-a9cc-65235cca927b"
                         },
                         new
                         {
                             Id = 45,
                             CompanyEmail = "johndoe45@company.gmail",
-                            Country = "UK",
+                            Country = "France",
                             DepartmentId = 4,
-                            EncryptedIBAN = "R0I4Mk5XQks2MDE2MTMzMTkyNjgxOQ==",
+                            EncryptedIBAN = "RlI3OTMwMDA2MTIzNDU2Nzg5MDE4OQ==",
                             FirstName = "John",
-                            JobTitle = "Content Writer",
+                            JobTitle = "SEO Analyst",
                             LastName = "Doe",
-                            Salary = 2076m,
-                            UserId = "a416fab3-37c5-4771-8e73-e37363d4dc2f"
+                            Salary = 2024m,
+                            UserId = "d1348522-6107-4ed5-824b-f30a3709aa04"
                         },
                         new
                         {
                             Id = 46,
                             CompanyEmail = "johndoe46@company.gmail",
-                            Country = "UK",
+                            Country = "Britain",
                             DepartmentId = 5,
-                            EncryptedIBAN = "R0IyM05XQks2MDE2MTMzMTkyNjgxOQ==",
+                            EncryptedIBAN = "R0IxOE5XQks2MDE2MTMzMTkyNjgxOQ==",
                             FirstName = "John",
-                            JobTitle = "Sales Engineer",
+                            JobTitle = "Business Developer",
                             LastName = "Doe",
-                            Salary = 2071m,
-                            UserId = "10d13800-c4cb-4125-a9de-2baf160b09fc"
+                            Salary = 4183m,
+                            UserId = "e0a31994-45f5-4924-949b-4288b7a87f8d"
                         },
                         new
                         {
                             Id = 47,
                             CompanyEmail = "johndoe47@company.gmail",
-                            Country = "UK",
+                            Country = "Germany",
                             DepartmentId = 6,
-                            EncryptedIBAN = "R0IyNk5XQks2MDE2MTMzMTkyNjgxOQ==",
+                            EncryptedIBAN = "REU0NjM3MDQwMDQ0MDUzMjAxMzAwMA==",
                             FirstName = "John",
-                            JobTitle = "Facilities Manager",
+                            JobTitle = "Logistics Coordinator",
                             LastName = "Doe",
-                            Salary = 2512m,
-                            UserId = "df694b56-2105-48bb-a29d-977166995cd4"
+                            Salary = 2691m,
+                            UserId = "b5bae1b5-4e8f-4fb4-a018-0fe283a46e59"
                         },
                         new
                         {
                             Id = 48,
                             CompanyEmail = "johndoe48@company.gmail",
-                            Country = "Germany",
+                            Country = "Bulgaria",
                             DepartmentId = 1,
-                            EncryptedIBAN = "REUyODM3MDQwMDQ0MDUzMjAxMzAwMA==",
+                            EncryptedIBAN = "Qkc0NVVOQ1IxMjM0NTY3ODkw",
                             FirstName = "John",
                             JobTitle = "Compensation Analyst",
                             LastName = "Doe",
-                            Salary = 1546m,
-                            UserId = "10f6c8e2-b8ee-489b-a654-b3c96faec0e7"
+                            Salary = 1506m,
+                            UserId = "bb0e0279-3a6c-4dab-86f6-f3d90cb2b3e4"
                         },
                         new
                         {
                             Id = 49,
                             CompanyEmail = "johndoe49@company.gmail",
-                            Country = "UK",
+                            Country = "Britain",
                             DepartmentId = 2,
-                            EncryptedIBAN = "R0IzN05XQks2MDE2MTMzMTkyNjgxOQ==",
+                            EncryptedIBAN = "R0IxNk5XQks2MDE2MTMzMTkyNjgxOQ==",
                             FirstName = "John",
                             JobTitle = "Auditor",
                             LastName = "Doe",
-                            Salary = 2075m,
-                            UserId = "b6ed985c-13ed-4916-8d38-b5a45cb6665c"
+                            Salary = 2117m,
+                            UserId = "97007bfd-66be-4585-9de1-3201e8ed912b"
                         },
                         new
                         {
                             Id = 50,
                             CompanyEmail = "johndoe50@company.gmail",
-                            Country = "UK",
+                            Country = "Bulgaria",
                             DepartmentId = 3,
-                            EncryptedIBAN = "R0I0N05XQks2MDE2MTMzMTkyNjgxOQ==",
+                            EncryptedIBAN = "QkcxMlVOQ1IxMjM0NTY3ODkw",
                             FirstName = "John",
-                            JobTitle = "Network Engineer",
+                            JobTitle = "Database Admin",
                             LastName = "Doe",
-                            Salary = 4675m,
-                            UserId = "7b6b47ee-1bf8-4aae-90fc-4c1e268a1371"
+                            Salary = 4553m,
+                            UserId = "9fa4fd2a-2fe1-4e35-9060-0bb66c8d6c01"
                         });
                 });
 
@@ -1436,21 +1436,21 @@ namespace HumanCapitalManagement.Migrations
                         new
                         {
                             Id = "1",
-                            ConcurrencyStamp = "3349f823-1c6f-4abc-a21c-9cdc31f02117",
+                            ConcurrencyStamp = "f3a923c1-02e6-4931-b7b3-5238032f9155",
                             Name = "HR Admin",
                             NormalizedName = "HR ADMIN"
                         },
                         new
                         {
                             Id = "2",
-                            ConcurrencyStamp = "12015f7c-1ec1-41c0-9157-39ebd5971baa",
+                            ConcurrencyStamp = "92e0c423-c842-496b-921b-2704ffc17550",
                             Name = "Manager",
                             NormalizedName = "MANAGER"
                         },
                         new
                         {
                             Id = "3",
-                            ConcurrencyStamp = "cf5569fe-7c04-47fe-8208-5416841f523b",
+                            ConcurrencyStamp = "f0524a52-48d3-4ff3-b945-6dc5980f62e8",
                             Name = "Employee",
                             NormalizedName = "EMPLOYEE"
                         });
@@ -1545,252 +1545,252 @@ namespace HumanCapitalManagement.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "2a561aab-d12b-4391-9132-f7da67125396",
+                            UserId = "807ffea6-a378-4b09-90c3-cbc53690a228",
                             RoleId = "2"
                         },
                         new
                         {
-                            UserId = "d2e4957d-cef0-4062-a6c9-3f588f13f58f",
+                            UserId = "e1569033-d81c-467c-b249-e8bb3e16100e",
                             RoleId = "2"
                         },
                         new
                         {
-                            UserId = "6951b2ae-f6f4-4da5-9136-b25004c28f9c",
+                            UserId = "f0a80dde-96fe-4611-9bee-44ca68cfba4c",
                             RoleId = "2"
                         },
                         new
                         {
-                            UserId = "0b2c6feb-b642-49f8-84ef-680d3ff2c344",
+                            UserId = "231bbd41-d41b-408a-82af-7f9c09aedadd",
                             RoleId = "2"
                         },
                         new
                         {
-                            UserId = "726d58c1-73fa-43fb-b3fb-48ec29b2ac5c",
+                            UserId = "7827929f-837c-4c79-9aa6-6a025f9309c8",
                             RoleId = "2"
                         },
                         new
                         {
-                            UserId = "f7afdc1e-c904-44e2-9224-43e4aecbc673",
+                            UserId = "385e6370-3ae5-465e-bd9d-d13902f11c83",
                             RoleId = "1"
                         },
                         new
                         {
-                            UserId = "e2a94c68-334a-4305-b96b-46693e124d1b",
+                            UserId = "38292939-4e0e-4d33-b8c9-aa99b6c033be",
                             RoleId = "3"
                         },
                         new
                         {
-                            UserId = "8e0bcaef-52af-4021-b2f3-1f2770d38d52",
+                            UserId = "6a21b06b-55ea-42b4-a104-90089134e536",
                             RoleId = "3"
                         },
                         new
                         {
-                            UserId = "c5c20525-4a8f-4a6f-bd5f-70cafc974b97",
+                            UserId = "7c7d1d58-5431-4628-95a4-65b25a10f771",
                             RoleId = "3"
                         },
                         new
                         {
-                            UserId = "7da74fd5-160f-4cd6-91b2-8628f4f47a83",
+                            UserId = "4849c0a0-5253-46dc-b38c-a80744f6a224",
                             RoleId = "3"
                         },
                         new
                         {
-                            UserId = "4eaa9c9e-8590-4534-960b-4c72ec5de01b",
+                            UserId = "711d97ad-25c9-40b8-b079-fc9e8ef748a2",
                             RoleId = "3"
                         },
                         new
                         {
-                            UserId = "7dd20390-ce34-4e8a-9989-7861830cb12d",
+                            UserId = "889d02b1-8a37-43f5-94b8-feb07a4489bc",
                             RoleId = "1"
                         },
                         new
                         {
-                            UserId = "5b2bc7e2-8f2c-43c5-9027-99b354272660",
+                            UserId = "8177d6ef-90c9-4690-b3e8-bc5971204277",
                             RoleId = "3"
                         },
                         new
                         {
-                            UserId = "6096bf5f-c034-4c83-91d5-f911cbe361ea",
+                            UserId = "2d4eb86b-684f-45e4-b4d7-c9716449878b",
                             RoleId = "3"
                         },
                         new
                         {
-                            UserId = "52404cf1-e1de-4159-a6c7-206d7eb1782a",
+                            UserId = "15620d8e-12da-41a7-80ee-6671ad4a0433",
                             RoleId = "3"
                         },
                         new
                         {
-                            UserId = "06ab1e2f-9194-447b-9847-70297d410585",
+                            UserId = "fe76c706-6f52-49c4-820f-6d378710df2f",
                             RoleId = "3"
                         },
                         new
                         {
-                            UserId = "d16589d3-e5e3-4c10-a858-c37d115d10ba",
+                            UserId = "eff03be9-2eda-4304-948c-55fc3d65a457",
                             RoleId = "3"
                         },
                         new
                         {
-                            UserId = "5328b4b2-c307-4932-8547-57857a70b30c",
+                            UserId = "543d1a57-fd27-4089-8f92-83016b397cde",
                             RoleId = "1"
                         },
                         new
                         {
-                            UserId = "4b00f983-a2b3-4366-955b-85d1fa2ae6fb",
+                            UserId = "3bfd2e43-16ea-4d3e-a8cf-cc83bd9169cd",
                             RoleId = "3"
                         },
                         new
                         {
-                            UserId = "bbfed021-45ee-40a5-97b8-a2ac21c6d198",
+                            UserId = "e5d87954-c9ce-496b-a84f-79dd729ea29e",
                             RoleId = "3"
                         },
                         new
                         {
-                            UserId = "ab4fa6d6-d7b7-42da-a023-7b1a8e3d0b91",
+                            UserId = "8ccba1c0-b8b3-4d13-abf7-ffaa356f9c28",
                             RoleId = "3"
                         },
                         new
                         {
-                            UserId = "1023b4e0-446e-460b-8f95-aa88c57c26df",
+                            UserId = "5784b99e-69e3-4f8d-9217-c3cd1b4f4145",
                             RoleId = "3"
                         },
                         new
                         {
-                            UserId = "e871640c-a4bd-4299-b669-def9e01d4e67",
+                            UserId = "0573bbba-a926-4845-a28d-b59dbee8e7a9",
                             RoleId = "3"
                         },
                         new
                         {
-                            UserId = "bd265674-3975-4d45-b2f4-dab47fe760f9",
+                            UserId = "48a9ec2b-37c5-4483-988f-28956c4c8bc7",
                             RoleId = "1"
                         },
                         new
                         {
-                            UserId = "a95df43d-3e6d-4291-989a-3aa48063e1ac",
+                            UserId = "870fdb1b-aaa0-4df2-828b-c2b51af111e1",
                             RoleId = "3"
                         },
                         new
                         {
-                            UserId = "f08881d5-7483-4eea-afc7-a1c402226c06",
+                            UserId = "870bc4c6-8719-4c65-9f1a-605762ec5f5c",
                             RoleId = "3"
                         },
                         new
                         {
-                            UserId = "c04d52fb-9fe6-4782-80cc-1867821fce44",
+                            UserId = "0bc32a8f-fadb-4f16-85f6-acfb652c7762",
                             RoleId = "3"
                         },
                         new
                         {
-                            UserId = "8d51c159-6db7-466f-a48d-9dfecc31c543",
+                            UserId = "f3f22722-2561-45a8-8602-99d3d7c08c4c",
                             RoleId = "3"
                         },
                         new
                         {
-                            UserId = "994946ef-8443-4db5-9369-fe1c871577d1",
+                            UserId = "56ced998-b75f-4d6e-bfd6-a681c2bb1bd9",
                             RoleId = "3"
                         },
                         new
                         {
-                            UserId = "fc28eb59-dcf7-46bf-81ff-bd16ef7171d8",
+                            UserId = "f20b371a-4a74-47b5-ac13-82faa4a003df",
                             RoleId = "1"
                         },
                         new
                         {
-                            UserId = "661d2c59-4abf-4f5f-b743-98be0e5644a9",
+                            UserId = "6dd4a31c-08cb-4049-85fa-0c0d8e774b15",
                             RoleId = "3"
                         },
                         new
                         {
-                            UserId = "056a8e45-40e3-4665-ae80-a499e7ed4fd6",
+                            UserId = "2fb7807a-edaa-4cf2-b413-689279eff9e6",
                             RoleId = "3"
                         },
                         new
                         {
-                            UserId = "af77617b-e2b5-4e09-8d9e-85d222d82564",
+                            UserId = "f54d0684-3e25-4c67-9950-ad6cc073f815",
                             RoleId = "3"
                         },
                         new
                         {
-                            UserId = "702b60fd-a373-4099-8c5a-5f4bbd869668",
+                            UserId = "7e567655-fbca-47b2-b50d-a090d51b7e6e",
                             RoleId = "3"
                         },
                         new
                         {
-                            UserId = "c16dbd99-0405-4ada-9298-1240a2f3c1b1",
+                            UserId = "66c314f2-e23c-401d-abca-931b1a9172a5",
                             RoleId = "3"
                         },
                         new
                         {
-                            UserId = "e96bcfb5-e8fe-43e3-8cce-7d34630d395d",
+                            UserId = "3856ea67-c0ec-49f5-8562-b551b9f4b4b5",
                             RoleId = "1"
                         },
                         new
                         {
-                            UserId = "91325d43-de93-49d9-8e08-f48e142a446a",
+                            UserId = "e847fbe7-e9bd-4cae-9a1e-9e3c4577c6a6",
                             RoleId = "3"
                         },
                         new
                         {
-                            UserId = "4bcc0e46-09c7-451d-b3d6-2f7d93ac12ae",
+                            UserId = "1fb73c13-9a3a-4ee8-ac12-3c45a235f491",
                             RoleId = "3"
                         },
                         new
                         {
-                            UserId = "d31ab548-c3ee-489e-b6f4-6794a39beefc",
+                            UserId = "955f6510-121c-4da4-b3cc-be5a76ef0136",
                             RoleId = "3"
                         },
                         new
                         {
-                            UserId = "6d83b64c-4eea-4f37-83a9-7353d0e957d6",
+                            UserId = "843ccd29-f525-43cf-a621-94c32a04e3e2",
                             RoleId = "3"
                         },
                         new
                         {
-                            UserId = "18eaacb8-e4be-4869-9551-7208c70b7824",
+                            UserId = "2ade2183-5269-451d-9f68-1450770ee6e0",
                             RoleId = "3"
                         },
                         new
                         {
-                            UserId = "9d094fdf-c338-4301-ace7-91d4ca9f7ad0",
+                            UserId = "dee346c3-0e66-4762-b2f4-4c6cbb72f53f",
                             RoleId = "1"
                         },
                         new
                         {
-                            UserId = "c5c8a4a8-5e08-4cb9-a1a8-edc657f42719",
+                            UserId = "885218c8-80f6-4906-8357-e231f6f5272f",
                             RoleId = "3"
                         },
                         new
                         {
-                            UserId = "729717c6-1ddc-4c09-8117-a254c2d5c263",
+                            UserId = "71b4e51e-f700-4c24-a9cc-65235cca927b",
                             RoleId = "3"
                         },
                         new
                         {
-                            UserId = "a416fab3-37c5-4771-8e73-e37363d4dc2f",
+                            UserId = "d1348522-6107-4ed5-824b-f30a3709aa04",
                             RoleId = "3"
                         },
                         new
                         {
-                            UserId = "10d13800-c4cb-4125-a9de-2baf160b09fc",
+                            UserId = "e0a31994-45f5-4924-949b-4288b7a87f8d",
                             RoleId = "3"
                         },
                         new
                         {
-                            UserId = "df694b56-2105-48bb-a29d-977166995cd4",
+                            UserId = "b5bae1b5-4e8f-4fb4-a018-0fe283a46e59",
                             RoleId = "3"
                         },
                         new
                         {
-                            UserId = "10f6c8e2-b8ee-489b-a654-b3c96faec0e7",
+                            UserId = "bb0e0279-3a6c-4dab-86f6-f3d90cb2b3e4",
                             RoleId = "1"
                         },
                         new
                         {
-                            UserId = "b6ed985c-13ed-4916-8d38-b5a45cb6665c",
+                            UserId = "97007bfd-66be-4585-9de1-3201e8ed912b",
                             RoleId = "3"
                         },
                         new
                         {
-                            UserId = "7b6b47ee-1bf8-4aae-90fc-4c1e268a1371",
+                            UserId = "9fa4fd2a-2fe1-4e35-9060-0bb66c8d6c01",
                             RoleId = "3"
                         });
                 });

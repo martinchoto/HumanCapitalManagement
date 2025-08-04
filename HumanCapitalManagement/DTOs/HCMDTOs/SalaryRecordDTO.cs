@@ -1,4 +1,4 @@
-﻿namespace HumanCapitalManagement.DTOs
+﻿namespace HumanCapitalManagement.DTOs.HCMDTOs
 {
 	public class SalaryRecordDTO
 	{

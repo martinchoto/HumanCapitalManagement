@@ -1,12 +1,12 @@
 ﻿using HumanCapitalManagement.Components.Pages;
 using HumanCapitalManagement.Data;
 using HumanCapitalManagement.Data.Models;
-using HumanCapitalManagement.DTOs;
 using HumanCapitalManagement.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using HumanCapitalManagement;
+using HumanCapitalManagement.DTOs.HCMDTOs;
 
 namespace HumanManagementCapital.Services
 {

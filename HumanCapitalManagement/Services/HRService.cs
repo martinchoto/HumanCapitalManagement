@@ -3,6 +3,7 @@ using HumanCapitalManagement.Components.Pages;
 using HumanCapitalManagement.Data;
 using HumanCapitalManagement.Data.Models;
 using HumanCapitalManagement.DTOs;
+using HumanCapitalManagement.DTOs.HCMDTOs;
 using HumanCapitalManagement.Services.Interfaces;
 using Humanizer;
 using Microsoft.AspNetCore.Identity;

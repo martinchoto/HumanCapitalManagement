@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
 using HumanCapitalManagement.Services.Interfaces;
 using HumanManagementCapital;
-using HumanCapitalManagement.DTOs;
+using HumanCapitalManagement.DTOs.HCMDTOs;
 
 namespace HumanCapitalManagement.Controllers
 {

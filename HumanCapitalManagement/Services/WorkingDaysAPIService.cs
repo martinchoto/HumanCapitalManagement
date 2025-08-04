@@ -1,5 +1,5 @@
 ﻿using System.Text.Json;
-using HumanCapitalManagement.DTOs;
+using HumanCapitalManagement.DTOs.WorkingDaysDTOs;
 using Newtonsoft.Json;
 
 namespace HumanCapitalManagement.Services

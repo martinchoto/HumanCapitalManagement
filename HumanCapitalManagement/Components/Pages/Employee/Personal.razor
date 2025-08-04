@@ -1,8 +1,10 @@
 ﻿@page "/personal"
 @attribute [Authorize]
-@using HumanCapitalManagement.Services
 @using System.Globalization
+@using HumanCapitalManagement.DTOs.HCMDTOs
+@using HumanCapitalManagement.Services
 @inject WorkingDaysAPIService WorkingDaysService
+@inject CountriesAPIService CountriesAPIService
 @if (employeeData == null)
 {
 	<div class="alert alert-warning text-center mt-5">
@@ -45,7 +47,7 @@ else
 
 
 									<dt class="col-sm-4">Country</dt>
-									<dd class="col-sm-8">@employeeData.Country</dd>
+									<dd class="col-sm-8"><img src=@imageURl>@employeeData.Country</dd>
 
 									<dt class="col-sm-4">IBAN</dt>
 									<dd class="col-sm-8">@employeeData.IBAN</dd>
@@ -75,8 +77,9 @@ else
 
 	private int selectedMonth = DateTime.Now.Month;
 	private PersonalEmployeeDTO? employeeData;
-
+	private string countryCCA2;
 	private string? workingDaysDisplay;
+	private string imageURl;
 
 	protected override async Task OnInitializedAsync()
 	{
@@ -88,8 +91,11 @@ else
 			workingDaysDisplay = "No country info";
 			return;
 		}
+		countryCCA2 = await CountriesAPIService.GetCountryIsoCodeAsync(employeeData.Country);
 
-		var result = await WorkingDaysService.GetWorkingDaysAsync(employeeData.Country, selectedMonth);
+		imageURl = $"https://flagsapi.com/{countryCCA2}/shiny/64.png";
+
+		var result = await WorkingDaysService.GetWorkingDaysAsync(countryCCA2, selectedMonth);
 		workingDaysDisplay = result?.ToString() ?? "N/A";
 	}
 }

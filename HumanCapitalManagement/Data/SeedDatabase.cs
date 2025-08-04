@@ -129,11 +129,11 @@ namespace HumanCapitalManagement.Data
         }
         private static readonly Dictionary<string, Func<string>> CountryIbanGenerators = new()
         {
-            ["BG"] = () => GenerateIban("BG", "UNCR", "1234567890"),
-            ["US"] = () => GenerateIban("US", "BOFA", "9876543210"), 
-            ["UK"] = () => GenerateIban("GB", "NWBK", "60161331926819"),
-            ["FR"] = () => GenerateIban("FR", "30006", "1234567890189"),
-            ["DE"] = () => GenerateIban("DE", "37040044", "0532013000")
+            ["Bulgaria"] = () => GenerateIban("BG", "UNCR", "1234567890"),
+            ["USA"] = () => GenerateIban("US", "BOFA", "9876543210"), 
+            ["Britain"] = () => GenerateIban("GB", "NWBK", "60161331926819"),
+            ["France"] = () => GenerateIban("FR", "30006", "1234567890189"),
+            ["Germany"] = () => GenerateIban("DE", "37040044", "0532013000")
         };
 
         public static List<string> SeedCountries()
